@@ -1,0 +1,404 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/02/2021, 21:17:36
+    Author     : anacl
+*/
+
+body{
+    --cor-principal: #0E6459;
+    --cor-bt: #FF7816;
+    --bt-hover:#D05700;
+    --branco-auxiliar: aliceblue;
+    --auxiliar-2: #272727;
+
+}
+
+.failure {
+    color: #ff0000;
+    font-weight: bold;
+}
+.success {
+    color: #0000ff;
+    font-weight: bold;
+}
+
+
+a{
+    transition:color 0.6s;
+}
+/*Estilizando menu e texto*/
+
+#title{
+    
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: #093D36;
+    margin-top: 64px;
+    font-size: 44px;
+
+    
+}
+@media screen and (min-width: 480px){
+.cabecalho{
+
+    width: 100%;
+    height: 88px;
+    display: flex;
+    background-color: var(--cor-principal);
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.cabecalho #logo{
+    justify-content: start;
+    margin-left: 15%;
+}
+}
+@media screen and (max-width: 479px){
+.cabecalho{
+
+    display: block;
+    padding: 16px;
+    width: 100%;
+   
+  
+
+    vertical-align: middle;
+  
+
+   
+    background-color: #0E6459;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   
+}
+.cabecalho #logo{
+    display: block;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    
+  
+}
+.cabecalho #tools{
+    display: block;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+
+
+}
+
+.cabecalho #tools{
+
+    display: flex;
+    align-items: center;
+    margin-right:15%;
+    text-align: left;
+    flex-wrap: wrap;
+
+}
+.cabecalho #login {
+
+    font-size: 24px;
+    
+    font-family: 'Fraunces', serif;
+    margin-right: 32px;
+}
+.cabecalho #login a{
+
+    color: aliceblue;
+    text-decoration: none;
+
+}
+.cabecalho #login a:hover, a:active{
+    
+    color: var(--cor-bt);
+    text-decoration: none;
+
+}
+
+
+/*estilizando login*/
+
+input .nomeSenha{
+    display: inline;
+}
+.nomeSenha{
+    margin-right: 8px;
+}
+.nomeSenha input{
+    display: inline;
+
+    padding: 5px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border-style: none;
+
+}
+#entrar{
+    width: 104px;
+    margin-top: 8px;
+    margin-right: 16px;
+    color: var(--branco-auxiliar);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-color: #FF7816;
+    border-radius: 5px;
+    border-style: none;
+    
+    
+
+}
+
+
+/* definindo e estilizando container de produtos*/
+.price{
+    margin-top: 8px;;
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color:var(--cor-principal);
+    
+}
+
+#content{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    
+}
+
+.item{
+
+    margin-bottom: 128px;
+    text-align: center;
+
+   
+}
+.item h3{
+    
+    margin-top: 16px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: var(--auxiliar-2);
+    
+}
+
+
+/*Estilizando botoes e input*/
+
+.bt-comprar{
+
+    display: block;
+    margin:0 auto ;
+    width: 173px;
+    padding: 16px 24px;
+    margin-top: 16px;
+
+    color: var(--cor-bt);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    background-color:transparent;
+    border: 2px solid var(--cor-bt) ;
+    border-radius: 10px;
+   
+}
+
+#entrar{
+    cursor: pointer;
+}
+#entrar:hover{
+    background-color: #D05700;
+}
+.bt-comprar:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 10px  rgba(0, 0, 0, 0.25);
+}
+
+input[type=text]:focus{
+    border:transparent;
+}
+
+/*Estilizando formulário*/
+
+.form-container{
+   
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:center;
+    
+    width: 40%;
+    height: 70%;
+
+    margin: 0 auto; 
+    margin-top: 32px;;
+    background-color: var(--branco-auxiliar);
+    border-radius: 15px;
+    
+}
+
+#containerLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#containerLogin #title{
+    margin-bottom: 32px;;
+}
+#containerLogin input{
+    
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#containerCadastro{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#containerCadastro input {
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.bt-form{
+
+    display: block;
+    margin:0 auto ;
+    width: 173px;
+    padding: 16px 24px;
+    margin-top: 16px;
+    color: var(--cor-bt);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    background-color:transparent;
+    border: 2px solid var(--cor-bt) ;
+    border-radius: 10px;
+    transition:background-color 0.8s;
+
+}
+.bt-form:hover{
+    color: var(--branco-auxiliar);
+    background-color: var(--bt-hover);
+    border: var(--bt-hover);
+}
+.bt-form:focus:active{
+    color: var(--branco-auxiliar);
+    background-color:var(--bt-hover);
+    border: var(--bt-hover);
+}
+
+#cadastro{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-top: 16px;
+    color: var(--cor-principal);
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+/* Estilizando carrinho */
+.cart-item{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 28px;
+    text-align: center;
+   
+}
+
+.cart-item h3{
+    
+    margin-top: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: var(--auxiliar-2);
+    
+}
+
+
+
+.item-info{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-bottom: 28px;
+    text-align: left;
+   
+}
+
+.quantity{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 54px;
+    text-align: left;
+   
+}
+
+.quantity-input{
+    width: 40px;   
+}
+
+#cart-content{
+
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+   background-color: var(--branco-auxiliar);
+   border-radius: 15px;
+   margin-bottom:100px;
+   padding-top: 100px;
+   padding-bottom: 100px;
+
+}
+
+
+
+.item-preview {
+
+    width: 100px;
+
+}
