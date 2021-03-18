@@ -56,7 +56,7 @@
               
                 <div id="bts">
                     <button class="bt-form"  onclick="edita()">Editar</button>
-                    <button class="delete" >Apagar Cadastro</button>
+                    <button class="delete" ><a href="DeleteClientServlet">Apagar Cadastro</a></button>
                     <button class="delete" ><a href="LogoutServlet">Sair</a></button>
 
                 </div>    

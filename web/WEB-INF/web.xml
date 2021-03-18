@@ -24,6 +24,14 @@
         <servlet-name>InsertCategoryServlet</servlet-name>
         <servlet-class>ecommerce.category.control.InsertCategoryServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteClientServlet</servlet-name>
+        <servlet-class>ecommerce.client.control.DeleteClientServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteAdminServlet</servlet-name>
+        <servlet-class>ecommerce.admin.control.DeleteAdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>InsertCategoryServlet</servlet-name>
         <url-pattern>/InsertCategoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteClientServlet</servlet-name>
+        <url-pattern>/DeleteClientServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAdminServlet</servlet-name>
+        <url-pattern>/DeleteAdminServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

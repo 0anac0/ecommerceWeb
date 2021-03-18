@@ -36,15 +36,6 @@
     </head>
     <body>
     <%@ include file="../components/header.jsp" %> 
-        <div>
-            Seus dados, <%= admin.getName()  %>:
-            </br>
-            <%= admin.getName()  %>
-            
-            </br>
-            <%= admin.getLogin()  %>
-        </div>
-        
         <div class="form-container">
             
             <div id="containerLogin">
@@ -79,8 +70,8 @@
               
                 <div id="bts">
                     <button class="bt-form"  onclick="edita()">Editar</button>
-                    <button class="delete" >Apagar Cadastro</button>
-                    <button class="delete" ><a href="LogoutServlet">Sair</a></button>
+                    <button class="delete" ><a href="../DeleteAdminServlet">Apagar Cadastro</a></button>
+                    <button class="delete" ><a href="../LogoutServlet">Sair</a></button>
 
                 </div>    
            

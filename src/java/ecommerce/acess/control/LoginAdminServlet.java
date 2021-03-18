@@ -51,7 +51,10 @@ public class LoginAdminServlet extends HttpServlet {
         }
         
         // saída
+        request.setAttribute("status", success);
+        request.setAttribute("message", message);
         String destiny = success ? "admin/index.jsp" : "admin/login.jsp";
-        response.sendRedirect(destiny);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(destiny);
+        requestDispatcher.forward(request, response);
     }
 }

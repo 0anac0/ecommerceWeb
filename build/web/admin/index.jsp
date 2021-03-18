@@ -31,28 +31,20 @@
     </head>
     <body>
     <%@ include file="../components/header.jsp" %> 
-        <div>
-            Seus dados, <%= admin.getName()  %>:
-            </br>
-            <%= admin.getName()  %>
-            
-            </br>
-            <%= admin.getLogin()  %>
-        </div>
         
         <div id="options">
             <div class="adm-opt">
-                <h3><a href="data.jsp">Cadastro</a></h3>
+                <h3><a href="/ecommerceWeb/admin/data.jsp">Cadastro</a></h3>
             </div>
             <div class="adm-opt">
-                <h3><a href="new-category.jsp"> Adicionar Categorias</a></h3>
+                <h3><a href="/ecommerceWeb/admin/new-category.jsp"> Adicionar Categorias</a></h3>
             </div>
             <div class="adm-opt">
-                 <h3><a href="new-product.jsp">Adicionar Produtos</a></h3> 
+                 <h3><a href="/ecommerceWeb/admin/new-product.jsp">Adicionar Produtos</a></h3> 
             </div>
             
             <div class="adm-opt delete">
-                 <h3 ><a href="new-product.jsp">Sair</a></h3> 
+                 <h3 ><a href="/ecommerceWeb/LogoutServlet">Sair</a></h3> 
             </div>
                 
                 

@@ -34,7 +34,7 @@
         <%@ include file="../components/header.jsp" %> 
         <div class="form-container">
             
-            <form id="productCadastro" action="../InsertProductServlet" method="post">
+            <form id="containerLogin" action="../InsertProductServlet" method="post">
                 <h2 id="title">Cadastre o novo produto!</h2>
                 <input id="nome" type="text" name="name" placeholder="Nome" required>
                 <input id="description" type="text"  name="description" placeholder="Digite a descrição" required>

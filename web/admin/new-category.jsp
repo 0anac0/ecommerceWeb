@@ -33,8 +33,8 @@
         <%@ include file="../components/header.jsp" %> 
         <div class="form-container">
             
-            <form id="productCadastro" action="/ecommerceWeb/InsertCategoryServlet" method="post">
-                <h2 id="title">Cadastre o novo produto!</h2>
+            <form id="containerLogin" action="/ecommerceWeb/InsertCategoryServlet" method="post">
+                <h2 id="title">Cadastre a nova categoria!</h2>
                 <input id="description" type="text"  name="description" placeholder="Digite a descrição" required>
                 <button class="bt-form" type="submit" >Inserir</button>
             </form>

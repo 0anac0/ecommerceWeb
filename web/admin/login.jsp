@@ -21,7 +21,7 @@
         <%@ include file="../components/header.jsp" %> 
         <div class="form-container">
             
-            <form id="containerLogin" action="../LoginAdminServlet" method="post">
+            <form id="containerLogin" action="/ecommerceWeb/LoginAdminServlet" method="post">
                 <h2 id="title">Login do Admin</h2>
                 <input id="login" name="login" type="text" placeholder="Digite seu login" required>
                 <input id="senha" name="password" type="password" placeholder="Digite sua senha" required>
