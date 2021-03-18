@@ -1,0 +1,307 @@
+body{
+    --cor-principal: #0E6459;
+    --cor-bt: #FF7816;
+    --bt-hover:#D05700;
+    --branco-auxiliar: aliceblue;
+    --auxiliar-2: #272727;
+
+}
+
+a{
+    transition:color 0.6s;
+}
+
+
+/*Estilizando menu e texto*/
+
+#title{
+    
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: --branco-auxiliar;
+    margin-top: 64px;
+    margin-bottom: 16px;;
+    font-size: 44px;
+
+    
+}
+@media screen and (min-width: 480px){
+.cabecalho{
+
+    width: 100%;
+    height: 88px;
+    display: flex;
+    background-color:var(--cor-principal);
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.cabecalho #logo{
+    justify-content: start;
+    margin-left: 15%;
+}
+}
+@media screen and (max-width: 479px){
+.cabecalho{
+
+    display: block;
+    padding: 16px;
+    width: 100%;
+   
+  
+
+    vertical-align: middle;
+  
+
+   
+    background-color: #0E6459;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   
+}
+.cabecalho #logo{
+    display: block;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    
+  
+}
+.cabecalho #tools{
+    display: block;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+
+
+}
+
+.cabecalho #tools{
+
+    display: flex;
+    align-items: center;
+    margin-right:15%;
+    text-align: left;
+    flex-wrap: wrap;
+
+}
+.cabecalho #login {
+
+    font-size: 24px;
+    
+    font-family: 'Fraunces', serif;
+    margin-right: 32px;
+}
+.cabecalho #login a{
+
+    color: aliceblue;
+    text-decoration: none;
+
+}
+.cabecalho #login a:hover, a:active{
+    
+    color: var(--cor-bt);
+    text-decoration: none;
+
+}
+
+/*estilizando login*/
+.form-container{
+
+    display: block;
+
+    width: 100%;
+    height: 60%;
+
+    margin:20px auto;
+    
+    
+    text-align: center;
+    
+    
+    
+    border-radius: 5px;
+
+
+    
+}
+#containerLogin{
+    
+    display: flex;
+    margin: 0 auto;
+    
+    width: 50%;
+    
+    flex-direction: column;
+
+
+
+
+}
+#containerLogin input{
+
+
+    border-style: none;
+    border-radius: 2px;
+    height: 32px;
+
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    background-color: #EEEEEE;
+
+
+}
+ input:focus{
+
+    background-color: var(--cor-bt);
+}
+
+#containerLogin .bt-form{
+    
+    width: 102px;
+    height: 40px;
+    
+    margin: 0 auto;
+    margin-top: 8px;
+    margin-bottom: 12px;
+
+    border-radius: 5px;
+    border-style: none;
+
+    font-family: 'Fraunces', serif;
+    font-weight:bold;
+    font-size: 12pt;
+
+    background-color: var(--cor-bt);
+
+}
+#containerLogin .bt-form:hover{
+    
+    background-color: #EEEEEE;
+    color: var(--cor-bt);
+
+    border: solid 2px ;
+
+}
+
+
+#containerCadastro{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#containerCadastro input{
+
+
+    border-style: none;
+    border-radius: 2px;
+    height: 32px;
+
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    background-color: #EEEEEE;
+
+
+}
+#containerCadastro #nome{
+    background-image: url("img/user.svg") no-repeat scroll 7px 7px;
+    width: 50%;
+    margin:10px auto;
+}
+#containerCadastro #address{
+    width: 50%;
+    margin:10px auto;
+    
+}
+
+#containerCadastro #email{
+    width: 50%;
+    margin:10px auto;
+    
+}
+
+#containerCadastro #login{
+    width: 50%;
+    margin:10px auto;
+    
+}
+
+#containerCadastro #senha{
+    width: 50%; 
+    margin:10px auto;
+    
+}
+#containerCadastro #dados{
+    margin-top: 8px;
+    display: inline;
+}
+#containerCadastro #dados #email{
+    width: 30%;
+}
+#containerCadastro #dados #senha{
+    width: 20%;
+}
+
+
+#containerCadastro .bt-form{
+    
+    width: 102px;
+    height: 40px;
+    
+    margin: 0 auto;
+    margin-top: 8px;
+    margin-bottom: 12px;
+
+    border-radius: 5px;
+    border-style: none;
+
+    font-family: 'Fraunces', serif;
+    font-weight:bold;
+    font-size: 12pt;
+
+    background-color: var(--cor-bt);
+
+}
+#containerCadastro .bt-form:hover{
+    
+    background-color: #EEEEEE;
+    color: var(--cor-bt);
+
+    border: solid 2px ;
+
+}
+
+
+#cadastro{
+    
+    color: var(--cor-bt);
+    text-decoration:underline;
+}
+#cadastro:hover{
+
+    cursor: pointer;
+    font-weight: bold;
+}
+#login-volta{
+    
+    color: var(--cor-bt);
+    text-decoration:underline;
+}
+#login-volta:hover{
+
+    cursor: pointer;
+    font-weight: bold;
+}

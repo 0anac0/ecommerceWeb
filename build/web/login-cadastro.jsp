@@ -33,6 +33,8 @@
                 <input id="address" type="text" name="address" placeholder="Ponha seu endereço" required> 
                 <input id="senha" type="password"  name="password" placeholder="Digite sua senha" required>
                 <button class="bt-form" type="submit" >Entrar</button>
+                <a id="login-volta" href="login-cadastro.jsp"><p>Já possui conta? Faça o login</p></a>
+                
             </form>
         </div>
         <%

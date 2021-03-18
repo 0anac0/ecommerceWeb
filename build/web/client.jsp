@@ -23,8 +23,46 @@
     </head>
     <body>
         <%@ include file="components/header.jsp" %> 
-        <h1>Hello World, <%= client.getName()  %>!</h1>
-        <a href="LogoutServlet">Sair</a>
+        
+
+        <!--Container de formulários-->
+        
+        <div class="form-container">
+            
+            <div id="containerLogin">
+
+                <h2 id="title">Dados de Cadastro</h2>
+
+                <div class="nome-icon">
+                    <h3 class="namelabel">Nome</h3>
+                    <img src="/ecommerceWeb/img/user.svg" id="icons">
+
+                </div>
+                
+                <p  class="p-dados"><%= client.getName()  %></p>
+                <div id="linha"></div>
+                <div class="nome-icon">
+                    <h3 class="namelabel">Email</h3>
+                    <img src="/ecommerceWeb/img/mail.svg" id="icons">
+
+                </div>
+               
+                <p  class="p-dados"><%= client.getEmail()  %></p>
+                <div id="linha"></div>
+
+                <h3 class="namelabel">Endereço</h3>
+                <p  class="p-dados"><%= client.getAddress() %></p>
+                <div id="linha"></div>
+              
+                <div id="bts">
+                    <button class="bt-form"  onclick="edita()">Editar</button>
+                    <button class="delete" >Apagar Cadastro</button>
+                    <button class="delete" ><a href="LogoutServlet">Sair</a></button>
+
+                </div>    
+           
+        </div>
+       
     </body>
 </html>
 <%

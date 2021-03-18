@@ -1,4 +1,9 @@
 <%-- 
+    Document   : data
+    Created on : 17/03/2021, 22:45:29
+    Author     : anacl
+--%>
+<%-- 
     Document   : index
     Created on : 17/03/2021, 17:27:16
     Author     : anacl
@@ -40,29 +45,51 @@
             <%= admin.getLogin()  %>
         </div>
         
-        <div id="options">
-            <div class="adm-opt">
-                <h3><a href="data.jsp">Cadastro</a></h3>
-            </div>
-            <div class="adm-opt">
-                <h3><a href="new-category.jsp"> Adicionar Categorias</a></h3>
-            </div>
-            <div class="adm-opt">
-                 <h3><a href="new-product.jsp">Adicionar Produtos</a></h3> 
-            </div>
+        <div class="form-container">
             
-            <div class="adm-opt delete">
-                 <h3 ><a href="new-product.jsp">Sair</a></h3> 
-            </div>
-                
-                
+            <div id="containerLogin">
+
+                <h2 id="title">Dados de Cadastro</h2>
+
+                <div class="nome-icon">
+                    <h3 class="namelabel">Nome</h3>
+                    <img src="/ecommerceWeb/img/user.svg" id="icons">
+
+                </div>
+                <p  class="p-dados"><%= admin.getName()  %></p>
+                <div id="linha"></div>
+
+
+                <div class="nome-icon">
+                    <h3 class="namelabel">Email</h3>
+                    <img src="/ecommerceWeb/img/mail.svg" id="icons">
+                </div>
+               
+                <p  class="p-dados"><%= admin.getEmail()  %></p>
+
+                <div id="linha"></div>
+
+                                <div class="nome-icon">
+                    <h3 class="namelabel">Login</h3>
+                    <img src="/ecommerceWeb/img/mail.svg" id="icons">
+                </div>
+               
+                <p  class="p-dados"><%= admin.getLogin()  %></p>
+                <div id="linha"></div>
+              
+                <div id="bts">
+                    <button class="bt-form"  onclick="edita()">Editar</button>
+                    <button class="delete" >Apagar Cadastro</button>
+                    <button class="delete" ><a href="LogoutServlet">Sair</a></button>
+
+                </div>    
+           
         </div>
-        <a href="../LogoutServlet">Sair</a>
     </body>
 </html>
 <%      } else {
             
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("../client.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("../index.jsp");
             requestDispatcher.forward(request, response);
         }
     }

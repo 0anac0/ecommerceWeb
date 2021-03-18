@@ -16,7 +16,9 @@
         requestDispatcher.forward(request, response);
     } else {
         if (session.getAttribute("admin") == null) {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("../client.jsp");
+            request.setAttribute("status", false);
+            request.setAttribute("message", "Por favor faça login de admin para acessar essa pagina");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
             requestDispatcher.forward(request, response);
         } else {
             

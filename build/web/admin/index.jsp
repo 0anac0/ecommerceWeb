@@ -14,7 +14,9 @@
         requestDispatcher.forward(request, response);
     } else {
         if (session.getAttribute("admin") == null) {
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("../client.jsp");
+            request.setAttribute("status", false);
+            request.setAttribute("message", "Por favor faça login de admin para acessar essa pagina");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
             requestDispatcher.forward(request, response);
         } else {
             
@@ -28,8 +30,7 @@
         <%@ include file="../components/imports.jsp" %> 
     </head>
     <body>
-        <%@ include file="../components/header.jsp" %> 
-        <h1>Hello World, <%= admin.getName()  %>!</h1>
+    <%@ include file="../components/header.jsp" %> 
         <div>
             Seus dados, <%= admin.getName()  %>:
             </br>
@@ -38,8 +39,24 @@
             </br>
             <%= admin.getLogin()  %>
         </div>
-        <a href="new-product.jsp">Cadastre um novo produto!</a>
-        <a href="new-category.jsp">Cadastre uma nova categoria!</a>
+        
+        <div id="options">
+            <div class="adm-opt">
+                <h3><a href="data.jsp">Cadastro</a></h3>
+            </div>
+            <div class="adm-opt">
+                <h3><a href="new-category.jsp"> Adicionar Categorias</a></h3>
+            </div>
+            <div class="adm-opt">
+                 <h3><a href="new-product.jsp">Adicionar Produtos</a></h3> 
+            </div>
+            
+            <div class="adm-opt delete">
+                 <h3 ><a href="new-product.jsp">Sair</a></h3> 
+            </div>
+                
+                
+        </div>
         <a href="../LogoutServlet">Sair</a>
     </body>
 </html>
