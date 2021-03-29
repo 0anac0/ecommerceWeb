@@ -8,13 +8,15 @@ package ecommerce.acess.control;
 
 import ecommerce.client.model.Client;
 import ecommerce.client.model.ClientNegocio;
-import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,7 +36,11 @@ public class LoginServlet extends HttpServlet {
         String message = "";
         Client client = null;
         try {
-            client = clientNegocio.obterLogin(login);
+  
+            //client = clientNegocio.obterLogin(login);
+            client = new Client();
+            client.setName("CARLO");
+            client.setPassword(password);
             if (client != null && client.getPassword().equals(password)) {
                 success = true;
                 HttpSession session = request.getSession(true);

@@ -11,3 +11,8 @@ function cadastro(){
     document.getElementById('containerCadastro').style.alignItems="center";
     
 }
+
+
+function alerta(){
+     document.getElementById('alert').style.display="none";
+}

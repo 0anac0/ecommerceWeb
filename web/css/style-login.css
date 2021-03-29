@@ -305,3 +305,56 @@ a{
     cursor: pointer;
     font-weight: bold;
 }
+
+/*estilizando o alerta*/
+
+.form-container #containerLogin #alert a{
+    margin-right: 30px;
+}
+
+
+.form-container #containerLogin #alert{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin:16px 0;
+    
+    background-color: #EB4A4A;
+    color:white;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    
+    box-sizing: border-box;
+}
+.form-container #containerLogin #alert:hover{
+      background-color: #B33737;
+      cursor: pointer;
+      
+}
+.form-container #containerLogin #alert-amarelo{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin:16px 0;
+
+    
+    background-color: #FFF500;
+    color:white;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    
+    box-sizing: border-box;
+}
+.form-container #containerLogin #alert-amarelo:hover{
+      background-color:#D6C502;
+      cursor: pointer;
+      
+}

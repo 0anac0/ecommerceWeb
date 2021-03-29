@@ -26,7 +26,7 @@
                 }
                 %>
             </div>
-            <a href="/ecommerceWeb/cart.jsp" ><img src="/ecommerceWeb/img/carrinho.svg"> </a>
+            <a href="/ecommerceWeb/cart.jsp" ><img src="/ecommerceWeb/img/carrinho.svg" alt="carrihnos de compras"> </a>
         </li>
                 
     </nav>

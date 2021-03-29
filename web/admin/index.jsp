@@ -50,7 +50,7 @@
                 
         </div>
         <a href="../LogoutServlet">Sair</a>
-    </body>
+    </body>/
 </html>
 <%      } else {
             

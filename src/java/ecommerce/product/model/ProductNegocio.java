@@ -5,6 +5,7 @@
  */
 package ecommerce.product.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,6 +36,19 @@ public class ProductNegocio {
     public List<Product> obterTodos() throws Exception {
        ProductDAO productDAO = new ProductDAO();
        return productDAO.obterTodos(); 
+       
+    }
+    public List<Product> mockObter() {
+        List<Product> resultado = new ArrayList<Product>();
+            Product p = new Product();
+            p.setId(1);
+            p.setDescription("descricao do produto");
+            p.setImage("url da imagem");
+            p.setName("name");
+            p.setQuantity(100);
+            p.setPrice(10.0);
+            resultado.add(p);
+        return resultado;
     }
     
 }

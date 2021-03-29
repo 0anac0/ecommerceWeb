@@ -21,31 +21,54 @@
         
         <section id="cart-content">
            
-            <article class="cart-item"> 
-                <img class='item-preview' src="img/produto1.svg"></img>
-                <div class='item-info'>
-                    <h3>Café Cerrado Mineiro</h3>
-                    <p class="price">R$ 35,00</p>
-                    <div class="quantity"> 
-                        <p>Quantity</p> 
-                        <input type="number" class="quantity-input" value='10' required>
-                    </div>
-                </div>
-            </article>
+            <div id='carro-itens'>
+                <div class="compras">
+                    <div class="compras-info compra-carrinho">
+                            <div id="dados">
+                                <p >Café Cerrado Mineiro</p>
+                                <a><img src='img/cancel.svg' width="10" height='10'></a>
+                            </div>
+                            <img class='item-preview' src="img/produto1.svg"></img>
+                            <p class="price">R$ 35,00</p>
+                            <input type="text" id="quantidade" name="name" value='1' required>
+                            <div id='produto-carac'>
+                               
+                                <a id='mais'><img src="img/plus.svg" width="30" height='30'></a>
+                                <a id='menos'><img src="img/menos.svg" width="30" height='30'></a>
 
-            <article class="cart-item"> 
-                <img class='item-preview' src="img/produto1.svg"></img>
-                <div class='item-info'>
-                    <h3>Café Cerrado Mineiro</h3>
-                    <p class="price">R$ 35,00</p>
-                    <div class="quantity"> 
-                        <p>Quantity</p> 
-                        <input type="number" class="quantity-input" value='10' required>
-                    </div>
-                </div>
-            </article>
+                            </div>
 
-            <button class="bt-form" onclick="checkout()">Fechar compra</button> 
+
+                     </div>
+                 </div>
+                
+                <div class="compras">
+                    <div class="compras-info compra-carrinho">
+                            <div id="dados">
+                                <p >Café Cerrado Mineiro</p>
+                                <a><img src='img/cancel.svg' width="10" height='10'></a>
+                            </div>
+                            <img class='item-preview' src="img/produto1.svg"></img>
+                            <p class="price">R$ 35,00</p>
+                            <input type="text" id="quantidade" name="name" value='1' required>
+                            <div id='produto-carac'>
+                               
+                                <a id='mais'><img src="img/plus.svg" width="30" height='30'></a>
+                                <a id='menos'><img src="img/menos.svg" width="30" height='30'></a>
+
+                            </div>
+
+
+                     </div>
+                 </div>
+                
+                 
+                 <button id='bt-carrinho' onclick="checkout()">Fechar compra</button> 
+            </div>
+            
+          
+
+            
         </section>
     </body>
 </html>

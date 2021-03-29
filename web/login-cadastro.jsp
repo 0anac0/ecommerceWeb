@@ -20,7 +20,15 @@
                 <h2 id="title">Faça o login</h2>
                 <input id="login" name="login" type="text" placeholder="Digite seu login" required>
                 <input id="senha" name="password" type="password" placeholder="Digite sua senha" required>
+                <div id="alert" onclick='alerta()'>
+                    <a><img src="/ecommerceWeb/img/cancel.svg" width="20" height="20"></a>
+                    <p>Login ou senha incorretos!</p>
+                </div>
+                <div id="alert-amarelo">
+                    <p>Insira seu endereço de login e senha</p>
+                </div>
                 <button class="bt-form" type="submit">Entrar</button>
+               
                 <a id="cadastro" onclick="cadastro()"><p>Não possui conta? Cadastre-se!</p></a>
                     
             </form>
@@ -33,6 +41,7 @@
                 <input id="address" type="text" name="address" placeholder="Ponha seu endereço" required> 
                 <input id="senha" type="password"  name="password" placeholder="Digite sua senha" required>
                 <button class="bt-form" type="submit" >Entrar</button>
+               
                 <a id="login-volta" href="login-cadastro.jsp"><p>Já possui conta? Faça o login</p></a>
                 
             </form>
