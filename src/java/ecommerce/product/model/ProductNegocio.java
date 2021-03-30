@@ -27,9 +27,10 @@ public class ProductNegocio {
         ProductDAO productDAO = new ProductDAO();
         productDAO.excluir(id);
     }
-    public void obter(int id) throws Exception {
+    public Product obter(int id) throws Exception {
         ProductDAO productDAO = new ProductDAO();
-        productDAO.obter(id);
+        Product product = productDAO.obter(id);
+        return product;
         
     }
     
@@ -50,5 +51,5 @@ public class ProductNegocio {
             resultado.add(p);
         return resultado;
     }
-    
+
 }

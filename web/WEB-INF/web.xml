@@ -32,6 +32,30 @@
         <servlet-name>DeleteAdminServlet</servlet-name>
         <servlet-class>ecommerce.admin.control.DeleteAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AlterClientServlet</servlet-name>
+        <servlet-class>ecommerce.client.control.AlterClientServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InitServlet</servlet-name>
+        <servlet-class>ecommerce.init.control.InitServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCartItemServlet</servlet-name>
+        <servlet-class>ecommerce.cart.control.AddCartItemServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveCartItemServlet</servlet-name>
+        <servlet-class>ecommerce.cart.control.RemoveCartItemServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>ecommerce.upload.UploadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowProductImageServlet</servlet-name>
+        <servlet-class>ecommerce.product.control.ShowProductImageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -63,6 +87,33 @@
     <servlet-mapping>
         <servlet-name>DeleteAdminServlet</servlet-name>
         <url-pattern>/DeleteAdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlterClientServlet</servlet-name>
+        <url-pattern>/AlterClientServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InitServlet</servlet-name>
+        <url-pattern>/InitServlet</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>InitServlet</welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>AddCartItemServlet</servlet-name>
+        <url-pattern>/AddCartItemServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveCartItemServlet</servlet-name>
+        <url-pattern>/RemoveCartItemServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/UploadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowProductImageServlet</servlet-name>
+        <url-pattern>/ShowProductImageServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

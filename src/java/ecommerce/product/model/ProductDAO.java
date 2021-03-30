@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ecommerce.product.model;
 
 import ecommerce.client.model.Client;
+import static ecommerce.config.Config.JDBC_SENHA;
+import static ecommerce.config.Config.JDBC_URL;
+import static ecommerce.config.Config.JDBC_USUARIO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,9 +17,6 @@ import java.util.List;
  */
 public class ProductDAO {
     
-    private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/ecommerce";
-    private static final String JDBC_USUARIO = "postgres";
-    private static final String JDBC_SENHA = "anac123";
 
     public void insert(Product p) throws Exception {
         Class.forName("org.postgresql.Driver");
@@ -84,7 +79,7 @@ public class ProductDAO {
         }
     }
     
-    public void obter(int id) throws Exception {
+    public Product obter(int id) throws Exception {
         Product p = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -112,6 +107,7 @@ public class ProductDAO {
         if (p == null) {
             throw new Exception("Produto não foi encontrado!");
         }
+        return p;
     }
 
     
