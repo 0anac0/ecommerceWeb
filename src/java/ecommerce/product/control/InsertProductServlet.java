@@ -60,7 +60,7 @@ public class InsertProductServlet extends HttpServlet {
         // saída
         request.setAttribute("status", success);
         request.setAttribute("message", message);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/new-product.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListProductsServlet");
         requestDispatcher.forward(request, response);
     }
 }

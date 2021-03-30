@@ -56,6 +56,14 @@
         <servlet-name>ShowProductImageServlet</servlet-name>
         <servlet-class>ecommerce.product.control.ShowProductImageServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListProductsServlet</servlet-name>
+        <servlet-class>ecommerce.product.control.ListProductsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListCategoriesServlet</servlet-name>
+        <servlet-class>ecommerce.category.control.ListCategoriesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -114,6 +122,14 @@
     <servlet-mapping>
         <servlet-name>ShowProductImageServlet</servlet-name>
         <url-pattern>/ShowProductImageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListProductsServlet</servlet-name>
+        <url-pattern>/ListProductsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListCategoriesServlet</servlet-name>
+        <url-pattern>/ListCategoriesServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -13,6 +13,7 @@
 <script src="/ecommerceWeb/script/main.js"></script>
 <link rel="stylesheet" href="/ecommerceWeb/css/style_1.css"> 
 <link rel="stylesheet" href="/ecommerceWeb/css/style-login.css"> 
+<link rel="stylesheet" href="/ecommerceWeb/css/list-product.css"> 
 <link rel="stylesheet" href="/ecommerceWeb/css/reset.css"> 
 <link rel="stylesheet" href="/ecommerceWeb/css/optionsstyle.css"> 
 
