@@ -64,6 +64,14 @@
         <servlet-name>ListCategoriesServlet</servlet-name>
         <servlet-class>ecommerce.category.control.ListCategoriesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadProductImageServlet</servlet-name>
+        <servlet-class>ecommerce.product.control.UploadProductImageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertOrderServlet</servlet-name>
+        <servlet-class>ecommerce.order.control.InsertOrderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -130,6 +138,14 @@
     <servlet-mapping>
         <servlet-name>ListCategoriesServlet</servlet-name>
         <url-pattern>/ListCategoriesServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadProductImageServlet</servlet-name>
+        <url-pattern>/UploadProductImageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertOrderServlet</servlet-name>
+        <url-pattern>/InsertOrderServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

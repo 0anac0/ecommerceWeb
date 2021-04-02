@@ -37,8 +37,33 @@
     </head>
     <body>
         <%@ include file="../components/header.jsp" %> 
-                <h1>Hello World!</h1>
-                <h1><%=product.getName()%></h1>
+            
+        <%if (request.getAttribute("message") != null){%>
+        <div>O CARALO: <%=request.getAttribute("message")  %></div>
+        <% 
+        }
+        %>
+        <h1>Hello World!</h1>
+            <h1><%=product.getName()%></h1>
+            <form action="UploadProductImageServlet" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<%=product.getId()%>">
+                
+                <div>Foto atual:</div>
+                
+                <%
+                if (product.getImage() ==null || product.getImage().trim().length() == 0) {
+                %>
+                <div>Este produto não possui imagem ainda.</div>
+                <%  } else { %>
+                   <div>Este produto possui imagem.</div>
+                <%
+                }
+                %>
+                <div>Nova foto:</div>
+                <div><input type="file" name="image"></div>
+                <input type="submit" value="Atualizar foto">
+            </form>    
+            
     </body>
 </html>
 <%      } else {

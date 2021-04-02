@@ -23,6 +23,12 @@ public class ProductNegocio {
         ProductDAO productDAO = new ProductDAO();
         productDAO.atualizar(p, id);
     }
+    
+    
+    public void atualizarImage(String imagePath, int id) throws Exception {
+        ProductDAO productDAO = new ProductDAO();
+        productDAO.atualizarImage(imagePath, id);
+    }
     public void excluir(int id) throws Exception {
         ProductDAO productDAO = new ProductDAO();
         productDAO.excluir(id);

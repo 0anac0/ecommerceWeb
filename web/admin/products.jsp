@@ -55,7 +55,7 @@
                   <td><%=product.getPrice()%></td>
                   <td><%=product.getImage()%></td>
                   <td><%=product.getQuantity()%></td>
-                  <td>Editar</td>
+                  <td><a href="ShowProductImageServlet?id=<%=product.getId()%>">Editar Imagem</a></td>
                 </tr>
                 <%
                 }

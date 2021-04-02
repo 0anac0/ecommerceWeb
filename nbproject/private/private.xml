@@ -3,7 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/order/model/OrderNegocio.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/components/header.jsp</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/product/control/ListProductsServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/product/control/ShowProductImageServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/acess/control/LoginServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/product/model/ProductNegocio.java</file>
@@ -15,12 +17,16 @@
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/product/control/InsertProductServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/admin/login.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/cart/model/CartItem.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/order_item/model/OrderItem.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/upload/UploadServlet.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/order/model/Order.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/client/model/ClientDAO.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/admin/products.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/client/control/InsertClientServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/admin/model/Admin.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/admin/data.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/init/control/InitServlet.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/order_item/model/OrderItemNegocio.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/config/config.properties</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/edit-client.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/script/main.js</file>
@@ -29,18 +35,22 @@
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/category/model/CategoryNegocio.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/cart/control/AddCartItemServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/admin/model/AdminDAO.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/product/control/UploadProductImageServlet.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/category/control/ListCategoriesServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/cart/model/CartNegocio.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/acess/control/LoginAdminServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/components/imports.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/client/control/AlterClientServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/admin/update-product-image.jsp</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/admin/categories.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/script/login.js</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/product/model/Product.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/order/model/OrderDAO.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/META-INF/context.xml</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/config/Config.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/css/optionsstyle.css</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/category/model/Category.java</file>
-            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/css/optionsstyle.css</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/admin/control/DeleteAdminServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/index.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/css/style_1.css</file>
@@ -48,8 +58,10 @@
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/css/style-login.css</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/client/control/DeleteClientServlet.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/admin/new-category.jsp</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/css/list-product.css</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/login-cadastro.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/category/model/CategoryDAO.java</file>
+            <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/order_item/model/OrderItemDAO.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/src/java/ecommerce/product/model/ProductDAO.java</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/admin/new-product.jsp</file>
             <file>file:/C:/Users/anacl/OneDrive/Documents/NetBeansProjects/ecommerceWeb/web/client.jsp</file>

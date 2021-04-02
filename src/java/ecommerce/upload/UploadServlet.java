@@ -1,5 +1,7 @@
 package ecommerce.upload;
 
+import ecommerce.product.model.Product;
+import ecommerce.product.model.ProductNegocio;
 import jakarta.servlet.ServletContext;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
@@ -27,7 +29,6 @@ public class UploadServlet extends HttpServlet {
             throws ServletException, IOException {
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         
-        
         if (isMultipart) {
             try {
                 DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -41,7 +42,7 @@ public class UploadServlet extends HttpServlet {
                 Iterator<FileItem> iter = items.iterator();
                 while (iter.hasNext()) {
                     FileItem item = iter.next();
-                    if (!item.isFormField() && item.getFieldName().equals("foto")) {
+                    if (!item.isFormField() && item.getFieldName().equals("image")) {
                         item.write(new File("/home/Upload/" + item.getName()));
                     }
                 }

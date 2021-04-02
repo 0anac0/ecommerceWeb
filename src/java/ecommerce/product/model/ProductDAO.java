@@ -62,6 +62,25 @@ public class ProductDAO {
         }
     }
     
+    
+    public void atualizarImage(String imagePath, int id) throws Exception {
+        Class.forName("org.postgresql.Driver");
+        Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
+        PreparedStatement preparedStatement = connection.prepareStatement(
+                "UPDATE products SET image = ? WHERE id = ?"
+        );
+        preparedStatement.setString(1, imagePath);
+        preparedStatement.setInt(2, id);
+        int resultado = preparedStatement.executeUpdate();
+        
+        preparedStatement.close();
+        connection.close();
+        
+        if (resultado != 1) {
+            throw new Exception("Produto não foi atualizado!");
+        }
+    }
+    
     public void excluir(int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
