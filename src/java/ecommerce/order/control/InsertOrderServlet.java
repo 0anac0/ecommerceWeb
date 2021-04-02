@@ -5,82 +5,76 @@
  */
 package ecommerce.order.control;
 
+import ecommerce.cart.model.CartItem;
+import ecommerce.cart.model.CartNegocio;
+import ecommerce.client.model.Client;
+import ecommerce.order.model.Order;
+import ecommerce.order.model.OrderNegocio;
+import ecommerce.order_item.model.OrderItemNegocio;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
+/*import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+*/
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  *
  * @author anacl
  */
 public class InsertOrderServlet extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet InsertOrderServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet InsertOrderServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        HttpSession session = request.getSession();
+        Client currentUser = (Client) session.getAttribute("user");
+        boolean success = false;
+        String message = "infelizmente a operação não foi finalizada!";
+        String destiny = "client.jsp";
+        
+        if (currentUser != null && currentUser.getId() != null) {
+            try {
+                // criar o pedido
+                OrderNegocio orderNegocio = new OrderNegocio();
+                Order order = orderNegocio.salvarPedido(currentUser.getId());
+
+                // adicionar os itens
+                List<CartItem> cartItems = CartNegocio.getCartItemsFromRequest(request);
+                OrderItemNegocio orderItemNegocio = new OrderItemNegocio();
+                
+                //salvar os itens e pegar o valor total do pedido
+                float totalValue = orderItemNegocio.salvarItemsPedido(order.getId(), cartItems);
+                order.setTotal(totalValue);
+                orderNegocio.atualizar(order, order.getId());
+                
+                // limpar o carrinho
+                Cookie cookie = CartNegocio.getCookie(request);
+                cookie.setValue("");
+                cookie.setMaxAge(Integer.MAX_VALUE);
+                response.addCookie(cookie);
+                
+                
+                success = true;
+                message = "operação finalizada!";
+            } catch (Exception ex) {
+                destiny = "cart.jsp";
+                message = ex.getMessage();
+            }
         }
-    }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+        request.setAttribute("status", success);
+        request.setAttribute("message", message);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("login-cadastro.jsp");
+        requestDispatcher.forward(request, response);
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

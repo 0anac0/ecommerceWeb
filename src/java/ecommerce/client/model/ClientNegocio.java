@@ -5,6 +5,7 @@
  */
 package ecommerce.client.model;
 
+import ecommerce.order.model.Order;
 import java.util.List;
 
 /**

@@ -47,6 +47,7 @@ public class AlterClientServlet extends HttpServlet {
             
 
             Client client = new Client();
+            client.setId(id);
             client.setName(name);
             client.setAddress(address);
             client.setEmail(email);
@@ -57,7 +58,10 @@ public class AlterClientServlet extends HttpServlet {
             try {
                 clientNegocio.atualizar(client, id);
                 success = true;
-                message = "Deu tudo certo!";
+                session.setAttribute("user", client);
+                session.setAttribute("username", client.getName());
+
+                message = "Atualização feita com sucesso!";
             } catch (Exception ex) {
                 message = ex.getMessage();
             }

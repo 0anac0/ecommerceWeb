@@ -41,13 +41,8 @@ public class UploadProductImageServlet extends HttpServlet {
             throws ServletException, IOException {
         int id = -1;
         FileItem image = null;
-        System.out.println("entrouuuuuuuuuuuuuuu");
-        
         String message = "deu errado mlr";
-        request.setAttribute("message", message);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("ShowProductImageServlet");
-        dispatcher.forward(request, response);
-        boolean success = false;
+        boolean success=false;
         
         if (true) {
             message = "pelo menos eh multipart";
@@ -92,7 +87,7 @@ public class UploadProductImageServlet extends HttpServlet {
         }
         //String message = success ? "Imagem atualizada" : "Não foi possível salvar a imagem";
         request.setAttribute("message", message);
-        //RequestDispatcher dispatcher = request.getRequestDispatcher("ShowProductImageServlet");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("ShowProductImageServlet");
         dispatcher.forward(request, response);
     }
 

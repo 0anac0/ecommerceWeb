@@ -23,6 +23,7 @@ public class Order {
     private Integer id;
     private Integer client_id;
     private Date created_at;
+    private Float total;
     
     public Integer getId() {
         return id;
@@ -46,6 +47,15 @@ public class Order {
     
     public void setCreatedAt(Date createdAt) {
         this.created_at = createdAt;
+    }
+    
+    
+    public Float getTotal() {
+        return total;
+    }
+
+    public void setTotal(Float total) {
+        this.total = total;
     }
     
     public String getCreatedAtFormatted() {

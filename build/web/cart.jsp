@@ -40,16 +40,17 @@
                                 <a href="RemoveCartItemServlet?productId=<%= product.getId()%>"><img src='img/cancel.svg' width="10" height='10'></a>
                             </div>
                             <img class="item-preview" src="img/produto1.svg"></img>
-                            <p class="price">R$ <%= product.getPrice()%></p>
+                            <p class="price">R$ <%= product.getPrice()*cartItem.getQuantity()%></p>
                             <p id="quantidade"><%= cartItem.getQuantity() %> </p>
                             <div id='produto-carac'>
                                
-                                <a id="mais" href="AddCartItemServlet?productId=<%= product.getId()%>&quantity=1">
-                                    <img src="img/plus.svg" width="30" height='30'>
-                                </a>
                                 <a id="menos" href="AddCartItemServlet?productId=<%= product.getId()%>&quantity=-1">
                                     <img src="img/menos.svg" width="30" height='30'>
                                 </a>
+                                <a id="mais" href="AddCartItemServlet?productId=<%= product.getId()%>&quantity=1">
+                                    <img src="img/plus.svg" width="30" height='30'>
+                                </a>
+                                
 
                             </div>
 
@@ -60,8 +61,18 @@
             <%
                 }
             %>
-                 
-                 <button id='bt-carrinho' onclick="checkout()">Fechar compra</button> 
+            <%
+            if (!cartItems.isEmpty()) {
+            %>     
+                <a style="margin: auto;" href="InsertOrderServlet"><button id='bt-carrinho'>Fechar compra</button></a>
+            <%
+            } else {
+            %>
+            <div style="margin: auto;">
+                <div class="compras"  > Carrinho vazio, escolha seus itens. </div></div>
+            <%
+            }
+            %>
             </div>
             
         </section>

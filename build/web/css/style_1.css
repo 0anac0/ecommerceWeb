@@ -413,10 +413,8 @@ input[type=text]:focus{
 .delete{
     
     
-   
-    display: block;
     margin: 0 auto;
-    width: 173px;
+    width: 180px;
     padding: 10px 10px;
     margin-top: 16px;
     margin-bottom: 16px;
@@ -508,7 +506,7 @@ input[type=text]:focus{
     height:80px;
     
     padding-bottom: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 100px;
     
   
     border-radius:5px;
@@ -561,6 +559,10 @@ input[type=text]:focus{
     
     
 }
+.produto-img {
+    height: 30px;
+}
+
 
 .compra-carrinho{
     

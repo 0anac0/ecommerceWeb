@@ -28,11 +28,12 @@ public class OrderItemDAO {
         int resultado;
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA)) {
             PreparedStatement preparedStatement = connection.prepareStatement(
-                    "INSERT INTO orders (product_id, order_id, quantity) VALUES (?, ?, ?)"
+                    "INSERT INTO order_items (product_id, order_id, quantity, price) VALUES (?, ?, ?, ?)"
             );  
             preparedStatement.setInt(1, i.getProductId());
             preparedStatement.setInt(2, i.getOrderId());
             preparedStatement.setInt(3, i.getQuantity());
+            preparedStatement.setFloat(4, i.getPrice());
             resultado = preparedStatement.executeUpdate();
             preparedStatement.close();
         }
@@ -54,6 +55,23 @@ public class OrderItemDAO {
         connection.close();
         
         if (resultado != 1) {
+            throw new Exception("Item não foi deletado!");
+        }
+    }
+    
+    public void excluirTodosPedido(Integer orderId) throws Exception {
+        Class.forName("org.postgresql.Driver");
+        Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
+        PreparedStatement preparedStatement = connection.prepareStatement(
+                "DELETE FROM order_items WHERE order_id = ?"
+        );
+        preparedStatement.setInt(1, orderId);
+        int resultado = preparedStatement.executeUpdate();
+        
+        preparedStatement.close();
+        connection.close();
+        
+        if (resultado == 0) {
             throw new Exception("Pedido não foi deletado!");
         }
     }
@@ -73,7 +91,8 @@ public class OrderItemDAO {
             i.setId(resultSet.getInt("id"));
             i.setProductId(resultSet.getInt("product_id"));
             i.setOrderId(resultSet.getInt("order_id"));
-            i.setQuantity(resultSet.getInt("quantity"));                   
+            i.setQuantity(resultSet.getInt("quantity"));
+            i.setPrice(resultSet.getFloat("price"));
         }
         resultSet.close();
         preparedStatement.close();
@@ -102,6 +121,7 @@ public class OrderItemDAO {
             i.setProductId(resultSet.getInt("product_id"));
             i.setOrderId(resultSet.getInt("order_id"));
             i.setQuantity(resultSet.getInt("quantity"));
+            i.setPrice(resultSet.getFloat("price"));
             resultado.add(i);
                     
         }
@@ -134,6 +154,7 @@ public class OrderItemDAO {
             i.setProductId(resultSet.getInt("product_id"));
             i.setOrderId(resultSet.getInt("order_id"));
             i.setQuantity(resultSet.getInt("quantity"));
+            i.setPrice(resultSet.getFloat("price"));
             resultado.add(i);
                     
         }

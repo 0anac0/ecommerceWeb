@@ -5,6 +5,11 @@
  */
 package ecommerce.client.model;
 
+import ecommerce.order.model.Order;
+import ecommerce.order.model.OrderNegocio;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author anacl
@@ -65,5 +70,15 @@ public class Client {
         this.password = password;
     }
     
+    public List<Order> getOrders() {
+        OrderNegocio orderNegocio = new OrderNegocio();
+        List<Order> orders = new ArrayList<>();
+        try {
+            orders = orderNegocio.obterTodosDoCliente(id);
+        } catch (Exception ex) {
+            
+        }
+        return orders;
+    }
     
 }

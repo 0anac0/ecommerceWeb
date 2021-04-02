@@ -14,6 +14,7 @@ public class OrderItem {
     private int order_id;
     private int product_id;
     private int quantity;
+    private float price;
     
     public Integer getId() {
         return id;
@@ -45,6 +46,14 @@ public class OrderItem {
     
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+    
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     public Product getProduct() throws Exception {
