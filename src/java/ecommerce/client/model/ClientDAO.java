@@ -5,6 +5,9 @@
  */
 package ecommerce.client.model;
 
+import static ecommerce.config.Config.JDBC_SENHA;
+import static ecommerce.config.Config.JDBC_USUARIO;
+import static ecommerce.config.Config.JDBC_URL;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +19,6 @@ import java.util.List;
  * @author anacl
  */
 public class ClientDAO {
-    
-    private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/ecommerce";
-    private static final String JDBC_USUARIO = "postgres";
-    private static final String JDBC_SENHA = "anac123";
 
     public void insert(Client c) throws Exception {
         Class.forName("org.postgresql.Driver");

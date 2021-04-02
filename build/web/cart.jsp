@@ -7,6 +7,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ecommerce.client.model.Client"%>
 
+<%@ page import="java.util.List" %>
+<%@ page import="ecommerce.cart.model.CartNegocio" %>
+<%@ page import="ecommerce.cart.model.CartItem" %>
+<%@ page import="ecommerce.product.model.Product" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,54 +25,44 @@
         <!--Produtos-->
         
         <section id="cart-content">
-           
+
             <div id='carro-itens'>
+           <%
+                List<CartItem> cartItems = CartNegocio.getCartItemsFromRequest(request);
+                for (int i = 0; !cartItems.isEmpty() && i < cartItems.size(); i ++) {
+                    CartItem cartItem = cartItems.get(i);
+                    Product product = cartItem.getProduct();
+            %>
                 <div class="compras">
                     <div class="compras-info compra-carrinho">
                             <div id="dados">
-                                <p >Café Cerrado Mineiro</p>
-                                <a><img src='img/cancel.svg' width="10" height='10'></a>
+                                <p ><%= product.getName()%></p>
+                                <a href="RemoveCartItemServlet?productId=<%= product.getId()%>"><img src='img/cancel.svg' width="10" height='10'></a>
                             </div>
-                            <img class='item-preview' src="img/produto1.svg"></img>
-                            <p class="price">R$ 35,00</p>
-                            <input type="text" id="quantidade" name="name" value='1' required>
+                            <img class="item-preview" src="img/produto1.svg"></img>
+                            <p class="price">R$ <%= product.getPrice()%></p>
+                            <p id="quantidade"><%= cartItem.getQuantity() %> </p>
                             <div id='produto-carac'>
                                
-                                <a id='mais'><img src="img/plus.svg" width="30" height='30'></a>
-                                <a id='menos'><img src="img/menos.svg" width="30" height='30'></a>
+                                <a id="mais" href="AddCartItemServlet?productId=<%= product.getId()%>&quantity=1">
+                                    <img src="img/plus.svg" width="30" height='30'>
+                                </a>
+                                <a id="menos" href="AddCartItemServlet?productId=<%= product.getId()%>&quantity=-1">
+                                    <img src="img/menos.svg" width="30" height='30'>
+                                </a>
 
                             </div>
 
 
-                     </div>
-                 </div>
+                    </div>
+                </div>
                 
-                <div class="compras">
-                    <div class="compras-info compra-carrinho">
-                            <div id="dados">
-                                <p >Café Cerrado Mineiro</p>
-                                <a><img src='img/cancel.svg' width="10" height='10'></a>
-                            </div>
-                            <img class='item-preview' src="img/produto1.svg"></img>
-                            <p class="price">R$ 35,00</p>
-                            <input type="text" id="quantidade" name="name" value='1' required>
-                            <div id='produto-carac'>
-                               
-                                <a id='mais'><img src="img/plus.svg" width="30" height='30'></a>
-                                <a id='menos'><img src="img/menos.svg" width="30" height='30'></a>
-
-                            </div>
-
-
-                     </div>
-                 </div>
-                
+            <%
+                }
+            %>
                  
                  <button id='bt-carrinho' onclick="checkout()">Fechar compra</button> 
             </div>
-            
-          
-
             
         </section>
     </body>

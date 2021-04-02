@@ -20,13 +20,20 @@
                 <h2 id="title">Faça o login</h2>
                 <input id="login" name="login" type="text" placeholder="Digite seu login" required>
                 <input id="senha" name="password" type="password" placeholder="Digite sua senha" required>
-                <div id="alert" onclick='alerta()'>
-                    <a><img src="/ecommerceWeb/img/cancel.svg" width="20" height="20"></a>
-                    <p>Login ou senha incorretos!</p>
-                </div>
-                <div id="alert-amarelo">
-                    <p>Insira seu endereço de login e senha</p>
-                </div>
+                <%
+                    if (request.getAttribute("message") != null && request.getAttribute("status") != null ) {
+                        boolean status = Boolean.parseBoolean(request.getAttribute("status").toString());
+                        final String id = status ? "alert-amarelo" : "alert";
+                        %>
+                            <div id="<%=id%>" onclick='alerta()'>
+                                <% if (id == "alert") { %>
+                                    <a><img src="/ecommerceWeb/img/cancel.svg" width="20" height="20"></a>
+                                <% } %>
+                                <p><%=request.getAttribute("message")%></p>
+                            </div>
+                        <%
+                    }    
+                %>
                 <button class="bt-form" type="submit">Entrar</button>
                
                 <a id="cadastro" onclick="cadastro()"><p>Não possui conta? Cadastre-se!</p></a>
@@ -46,14 +53,6 @@
                 
             </form>
         </div>
-        <%
-        if (request.getAttribute("message") != null && request.getAttribute("status") != null ) {
-            boolean status = Boolean.parseBoolean(request.getAttribute("status").toString());
-            final String classe = status ? "success" : "failure";
-            %>
-                <div class="<%=classe %>"><%=request.getAttribute("message")%></div>
-            <%
-        }    
-        %>
+        
     </body>
 </html>

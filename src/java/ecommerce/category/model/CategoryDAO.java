@@ -5,6 +5,9 @@
  */
 package ecommerce.category.model;
 
+import static ecommerce.config.Config.JDBC_SENHA;
+import static ecommerce.config.Config.JDBC_URL;
+import static ecommerce.config.Config.JDBC_USUARIO;
 import ecommerce.product.model.Product;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,10 +21,6 @@ import java.util.List;
  * @author anacl
  */
 public class CategoryDAO {
-
-    private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/ecommerce";
-    private static final String JDBC_USUARIO = "postgres";
-    private static final String JDBC_SENHA = "anac123";
 
     public void insert(Category c) throws Exception {
         Class.forName("org.postgresql.Driver");

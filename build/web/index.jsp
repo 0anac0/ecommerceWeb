@@ -23,13 +23,16 @@
         
         <section id="content">
             <%  ProductNegocio productNegocio = new ProductNegocio();
-                List<Product> products = productNegocio.mockObter();
+                List<Product> products = productNegocio.obterTodos();
                 for (int i = 0; i < products.size(); i++){
             %>
             <article class="item"> <img src="img/produto1.svg"></img>
                 <h3><%=products.get(i).getName()%></h3>
                 <p class="price">R$ <%=products.get(i).getPrice()%></p>
-                <button class="bt-comprar">Comprar</button>
+                <form action="AddCartItemServlet">
+                    <input type="hidden" name="productId" value="<%=products.get(i).getId()%>" />
+                    <button class="bt-comprar" type="submit">Comprar</button>
+                </form>
             </article>
         <%
             }

@@ -5,6 +5,9 @@
  */
 package ecommerce.admin.model;
 
+import static ecommerce.config.Config.JDBC_SENHA;
+import static ecommerce.config.Config.JDBC_URL;
+import static ecommerce.config.Config.JDBC_USUARIO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,10 +19,6 @@ import java.sql.ResultSet;
  */
 public class AdminDAO {
     
-    private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/ecommerce";
-    private static final String JDBC_USUARIO = "postgres";
-    private static final String JDBC_SENHA = "anac123";
-
     public void atualizar(Admin a, int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);

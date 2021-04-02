@@ -1,11 +1,13 @@
 <%-- 
-    Document   : index
-    Created on : 17/03/2021, 17:27:16
+    Document   : update-product-image
+    Created on : 29/03/2021, 21:33:22
     Author     : anacl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ecommerce.admin.model.Admin"%>
+<%@page import="ecommerce.product.model.Product"%>
+
 <%
     if (session.getAttribute("user") == null){
         request.setAttribute("status", false);
@@ -22,41 +24,29 @@
             
             if((Boolean) session.getAttribute("admin") == true){
                 Admin admin = (Admin) session.getAttribute("user");
+                Product product = (Product) request.getAttribute("product");
+                if (product == null) {
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                    requestDispatcher.forward(request, response);
+                }
 %>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <%@ include file="../components/imports.jsp" %> 
+        <%@ include file="../components/imports.jsp" %>  
     </head>
     <body>
-    <%@ include file="../components/header.jsp" %> 
-        
-        <div id="options">
-            <div class="adm-opt">
-                <h3><a href="/ecommerceWeb/admin/data.jsp">Cadastro</a></h3>
-            </div>
-            <div class="adm-opt">
-                <h3><a href="/ecommerceWeb/ListCategoriesServlet">Categorias</a></h3>
-            </div>
-            <div class="adm-opt">
-                 <h3><a href="/ecommerceWeb/ListProductsServlet">Produtos</a></h3> 
-            </div>
-            
-            <div class="adm-opt delete">
-                 <h3 ><a href="/ecommerceWeb/LogoutServlet">Sair</a></h3> 
-            </div>
-                
-                
-        </div>
-        <a href="../LogoutServlet">Sair</a>
-    </body>/
+        <%@ include file="../components/header.jsp" %> 
+                <h1>Hello World!</h1>
+                <h1><%=product.getName()%></h1>
+    </body>
 </html>
 <%      } else {
             
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("../client.jsp");
             requestDispatcher.forward(request, response);
         }
+
     }
   }
 %>

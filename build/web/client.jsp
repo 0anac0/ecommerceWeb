@@ -98,7 +98,8 @@
            
               
                 <div id="bts">
-                  
+                    
+                    <a href="AlterClientServlet"><button class="delete" >Editar</button></a>
                     <a href="DeleteClientServlet"><button class="delete" >Apagar Cadastro</button></a>
                     <a href="LogoutServlet"><button class="delete" >Sair</button></a>
 

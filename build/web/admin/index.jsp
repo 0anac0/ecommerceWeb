@@ -37,10 +37,10 @@
                 <h3><a href="/ecommerceWeb/admin/data.jsp">Cadastro</a></h3>
             </div>
             <div class="adm-opt">
-                <h3><a href="/ecommerceWeb/admin/new-category.jsp"> Adicionar Categorias</a></h3>
+                <h3><a href="/ecommerceWeb/ListCategoriesServlet">Categorias</a></h3>
             </div>
             <div class="adm-opt">
-                 <h3><a href="/ecommerceWeb/admin/new-product.jsp">Adicionar Produtos</a></h3> 
+                 <h3><a href="/ecommerceWeb/ListProductsServlet">Produtos</a></h3> 
             </div>
             
             <div class="adm-opt delete">

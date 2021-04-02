@@ -419,7 +419,7 @@ input[type=text]:focus{
     width: 173px;
     padding: 10px 10px;
     margin-top: 16px;
-    margin-bottom: 16px;*/
+    margin-bottom: 16px;
     
     /*estilo texto*/
     font-family: 'Roboto', sans-serif;
@@ -467,7 +467,7 @@ input[type=text]:focus{
 
 
 #cart-content{
-
+    
     width: 100%;
     margin: 0 auto;
   
@@ -485,7 +485,6 @@ input[type=text]:focus{
 
 }
 
-
 /*Estilizando histórico de compras*/
 
 
@@ -495,17 +494,16 @@ input[type=text]:focus{
     display:flex;
     flex-direction: column;
     justify-content: center;
-   
 }
-#carro-itens .compras{
+#carro-itens .compras {
    
     margin-bottom: 112px;
     align-items: center;
  
 }
 
-.compras{
-  
+.compras {
+    
     width:100%;
     height:80px;
     
@@ -524,7 +522,7 @@ input[type=text]:focus{
    
     
 }
-.compras-info{
+.compras-info {
       border:2px solid var(--cor-bt);
       margin-bottom: 16px;
     
@@ -552,7 +550,7 @@ input[type=text]:focus{
     
     
 }
-.compras .compras-info .produtos-comprados .produto{
+.compras .compras-info .produtos-comprados .produto {
     
     display: flex;
     margin:0 10px;
