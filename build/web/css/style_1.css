@@ -637,4 +637,116 @@ input[type=text]:focus{
     transition:color 0.6s;
 }
 
+/*Página de relatórios*/
+
+#relatorios{
+    
+    display: flex;
+   
+    width: 80%;
+   
+    margin:0 auto;
+    
+    font-family: 'Roboto', sans-serif;
+    
+    justify-content: space-around;
+   
+}
+
+#relatorios .form-cont{
+    
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    border: 2px solid var(--cor-bt);
+    border-radius:15px;
+    
+    
+    align-items: center;
+    
+    
+    padding-bottom: 16px;
+    box-sizing: border-box;
+}
+
+
+#relatorios .form-cont #start {
+    margin-bottom: 16px;
+}
+
+
+
+
+#relatorios .form-cont .title-relatorio{
+    
+    font-size: 16px;
+    font-weight:bold;
+    text-transform: uppercase;
+    
+    border-radius:10px;
+    
+    margin-bottom: 16px;  
+    
+    padding:20px;
+    
+    background-color: var(--cor-bt);
+    
+    box-sizing: border-box;
+    
+}
+
+#relatorios .form-cont #start{
+    
+    text-align: center;
+    border:none;
+    border-bottom: 2px solid var(--cor-bt);
+}
+
+#relatorios .form-cont #start:focus{
+    
+    background-color:transparent;
+    border:none;
+    border-bottom: solid 2px var(--cor-bt);;
+}
+
+
+
+#relatorios .form-cont #bt-rela{
+    
+     font-family: 'Roboto', sans-serif;
+     font-weight: bold;
+       letter-spacing: 2px; 
+     
+     background-color: var(--cor-bt);
+     color:white;
+     
+     padding: 5px;
+     
+     border:none;
+     border-radius: 2px;
+     
+     
+     cursor:pointer;
+     
+     box-sizing: border-box;
+     transition:color 0.6s;
+    
+}
+
+
+#relatorios .form-cont #bt-rela:hover{
+    
+    background-color: transparent;
+    color: var(--cor-bt);
+    
+  
+   
+    border: solid 2px var(--cor-bt);
+    border-radius:2px;
+    
+    box-sizing: border-box;
+    
+    padding: 3px;
+}
 
