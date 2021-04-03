@@ -39,7 +39,7 @@ public class ApplyUpdateProductServlet extends HttpServlet {
             p.setQuantity(quantity);
             p.setPrice(price);
             p.setImage(image);
-            productNegocio.atualizar(p, id);
+            productNegocio.update(p, id);
             success = true;
             message = "Produto atualizado com sucesso";
         } catch (Exception ex) {

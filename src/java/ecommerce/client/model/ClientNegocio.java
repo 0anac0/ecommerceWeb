@@ -5,7 +5,6 @@
  */
 package ecommerce.client.model;
 
-import ecommerce.order.model.Order;
 import java.util.List;
 
 /**
@@ -15,9 +14,9 @@ import java.util.List;
 public class ClientNegocio {
     
 
-    public Client obterLogin(String login) throws Exception {
+    public Client findFromLogin(String login) throws Exception {
         ClientDAO clientDAO = new ClientDAO();
-        return clientDAO.obterLogin(login);
+        return clientDAO.findFromLogin(login);
     }
 
     public void insert(Client c) throws Exception {
@@ -25,22 +24,22 @@ public class ClientNegocio {
         clientDAO.insert(c);
     }
     
-    public void atualizar(Client c, int id) throws Exception {
+    public void update(Client c, int id) throws Exception {
         ClientDAO clientDAO = new ClientDAO();
-        clientDAO.atualizar(c, id);
+        clientDAO.update(c, id);
     }
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         ClientDAO clientDAO = new ClientDAO();
-        clientDAO.excluir(id);
+        clientDAO.delete(id);
     }
-    public Client obter(int id) throws Exception {
+    public Client find(int id) throws Exception {
         ClientDAO clientDAO = new ClientDAO();
-        return clientDAO.obter(id);
+        return clientDAO.find(id);
         
     }
     
-    public List<Client> obterTodos() throws Exception {
+    public List<Client> findAll() throws Exception {
        ClientDAO clientDAO = new ClientDAO();
-       return clientDAO.obterTodos(); 
+       return clientDAO.findAll(); 
     }
 }

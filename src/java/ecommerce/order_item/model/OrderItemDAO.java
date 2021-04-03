@@ -42,7 +42,7 @@ public class OrderItemDAO {
         }
     }
 
-    public void excluir(Integer id) throws Exception {
+    public void delete(Integer id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -59,7 +59,7 @@ public class OrderItemDAO {
         }
     }
     
-    public void excluirTodosPedido(Integer orderId) throws Exception {
+    public void deleteAllFromOrder(Integer orderId) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -73,7 +73,7 @@ public class OrderItemDAO {
         
     }
     
-    public OrderItem obter(Integer id) throws Exception {
+    public OrderItem find(Integer id) throws Exception {
         OrderItem i = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -102,7 +102,7 @@ public class OrderItemDAO {
     }
 
     
-    public List<OrderItem> obterTodos() throws Exception {
+    public List<OrderItem> findAll() throws Exception {
         List<OrderItem> resultado = new ArrayList<>();
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -133,7 +133,7 @@ public class OrderItemDAO {
     }
     
     
-    public List<OrderItem> obterTodosPedido(Integer order_id) throws Exception {
+    public List<OrderItem> findAllFromOrder(Integer order_id) throws Exception {
         List<OrderItem> resultado = new ArrayList<>();
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);

@@ -8,7 +8,6 @@ package ecommerce.category.control;
 import ecommerce.category.model.Category;
 import ecommerce.category.model.CategoryNegocio;
 import java.io.IOException;
-import java.io.PrintWriter;
 /*import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +17,6 @@ import javax.servlet.RequestDispatcher;
 
 */
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

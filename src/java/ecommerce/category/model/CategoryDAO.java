@@ -39,7 +39,7 @@ public class CategoryDAO {
         }
     }
 
-    public void atualizar(Category c, int id) throws Exception {
+    public void update(Category c, int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -57,7 +57,7 @@ public class CategoryDAO {
         }
     }
     
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -74,7 +74,7 @@ public class CategoryDAO {
         }
     }
     
-    public Category obter(int id) throws Exception {
+    public Category find(int id) throws Exception {
         Category c = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -100,7 +100,7 @@ public class CategoryDAO {
         return c;
     }
     
-    public List<Category> obterTodos() throws Exception {
+    public List<Category> findAll() throws Exception {
         List<Category> resultado = new ArrayList<Category>();
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -126,8 +126,8 @@ public class CategoryDAO {
         return resultado;
     }
     
-    public List<Product> obterTodosProdutos(int id) throws Exception {
-        List<Product> resultado = new ArrayList<Product>();
+    public List<Product> findAllProducts(int id) throws Exception {
+        List<Product> resultado = new ArrayList<>();
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -159,4 +159,5 @@ public class CategoryDAO {
         }
         return resultado;
     }
+
 }

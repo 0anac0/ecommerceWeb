@@ -9,9 +9,6 @@ import ecommerce.admin.model.Admin;
 import ecommerce.admin.model.AdminNegocio;
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -37,7 +34,7 @@ public class DeleteAdminServlet extends HttpServlet {
             int id = admin.getId();
             AdminNegocio adminNegocio = new AdminNegocio();
             try {
-                adminNegocio.excluir(id);
+                adminNegocio.delete(id);
                 success = true;
                 message = "Admin apagado!";
             } catch (Exception ex) {

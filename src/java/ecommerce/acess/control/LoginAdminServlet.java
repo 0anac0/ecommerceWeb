@@ -44,7 +44,7 @@ public class LoginAdminServlet extends HttpServlet {
         String message = "";
         Admin admin = null;
         try {
-            admin = adminNegocio.obterLogin(login);
+            admin = adminNegocio.findFromLogin(login);
             if (admin != null && admin.getPassword().equals(password)) {
                 success = true;
                 HttpSession session = request.getSession(true);

@@ -41,7 +41,7 @@ public class ClientDAO {
         }
     }
 
-    public void atualizar(Client c, int id) throws Exception {
+    public void update(Client c, int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -63,7 +63,7 @@ public class ClientDAO {
         }
     }
     
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -80,7 +80,7 @@ public class ClientDAO {
         }
     }
     
-    public Client obter(int id) throws Exception {
+    public Client find(int id) throws Exception {
         Client c = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -109,7 +109,7 @@ public class ClientDAO {
         return c;
     }
     
-    public Client obterLogin(String login) throws Exception {
+    public Client findFromLogin(String login) throws Exception {
         Client c = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -138,7 +138,7 @@ public class ClientDAO {
         return c;
     }
     
-    public List<Client> obterTodos() throws Exception {
+    public List<Client> findAll() throws Exception {
         List<Client> resultado = new ArrayList<Client>();
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);

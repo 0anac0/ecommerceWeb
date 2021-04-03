@@ -74,7 +74,7 @@ public class Client {
         OrderNegocio orderNegocio = new OrderNegocio();
         List<Order> orders = new ArrayList<>();
         try {
-            orders = orderNegocio.obterTodosDoCliente(id);
+            orders = orderNegocio.findAllFromClient(id);
         } catch (Exception ex) {
             
         }

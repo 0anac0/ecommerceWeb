@@ -56,7 +56,7 @@ public class AlterClientServlet extends HttpServlet {
 
             ClientNegocio clientNegocio = new ClientNegocio();
             try {
-                clientNegocio.atualizar(client, id);
+                clientNegocio.update(client, id);
                 success = true;
                 session.setAttribute("user", client);
                 session.setAttribute("username", client.getName());

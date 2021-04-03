@@ -19,7 +19,7 @@ import java.sql.ResultSet;
  */
 public class AdminDAO {
     
-    public void atualizar(Admin a, int id) throws Exception {
+    public void update(Admin a, int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -41,7 +41,7 @@ public class AdminDAO {
         }
     }
     
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -58,7 +58,7 @@ public class AdminDAO {
         }
     }
     
-    public Admin obter(int id) throws Exception {
+    public Admin find(int id) throws Exception {
         Admin a = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -86,7 +86,7 @@ public class AdminDAO {
         return a;
     }
     
-    public Admin obterLogin(String login) throws Exception {
+    public Admin findFromLogin(String login) throws Exception {
         Admin a = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);

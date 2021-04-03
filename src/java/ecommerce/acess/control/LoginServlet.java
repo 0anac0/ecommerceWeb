@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
         String message = "";
         Client client = null;
         try {
-            client = clientNegocio.obterLogin(login);
+            client = clientNegocio.findFromLogin(login);
             //client = new Client();
             //client.setName("CARLO");
             //client.setPassword(password);

@@ -45,16 +45,17 @@ public class InsertOrderServlet extends HttpServlet {
             try {
                 // criar o pedido
                 OrderNegocio orderNegocio = new OrderNegocio();
-                Order order = orderNegocio.salvarPedido(currentUser.getId());
+                
+                Order order = orderNegocio.saveOrder(currentUser.getId());
 
                 // adicionar os itens
                 List<CartItem> cartItems = CartNegocio.getCartItemsFromRequest(request);
                 OrderItemNegocio orderItemNegocio = new OrderItemNegocio();
                 
                 //salvar os itens e pegar o valor total do pedido
-                float totalValue = orderItemNegocio.salvarItemsPedido(order.getId(), cartItems);
+                float totalValue = orderItemNegocio.insertOrder(order.getId(), cartItems);
                 order.setTotal(totalValue);
-                orderNegocio.atualizar(order, order.getId());
+                orderNegocio.update(order, order.getId());
                 
                 // limpar o carrinho
                 Cookie cookie = CartNegocio.getCookie(request);

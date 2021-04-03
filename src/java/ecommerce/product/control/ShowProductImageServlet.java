@@ -30,7 +30,7 @@ public class ShowProductImageServlet extends HttpServlet {
         ProductNegocio productNegocio = new ProductNegocio();
         Product product = null;
         try {
-            product = productNegocio.obter(Integer.parseInt(id));
+            product = productNegocio.find(Integer.parseInt(id));
             request.setAttribute("product", product);
         } catch (Exception ex) {
             request.setAttribute("product", product);

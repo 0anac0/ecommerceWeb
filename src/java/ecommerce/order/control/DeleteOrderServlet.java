@@ -30,7 +30,7 @@ public class DeleteOrderServlet extends HttpServlet {
         try {
             
             message = "entrou no try";
-            orderNegocio.excluir(Integer.parseInt(id));
+            orderNegocio.delete(Integer.parseInt(id));
             success = true;
             message = "Pedido excluído com sucesso";
         } catch (Exception ex) {

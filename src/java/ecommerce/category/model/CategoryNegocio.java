@@ -18,23 +18,23 @@ public class CategoryNegocio {
         categoryDAO.insert(c);
     }
     
-    public void atualizar(Category c, int id) throws Exception {
+    public void update(Category c, int id) throws Exception {
         CategoryDAO categoryDAO = new CategoryDAO();
-        categoryDAO.atualizar(c, id);
+        categoryDAO.update(c, id);
     }
     
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         CategoryDAO categoryDAO = new CategoryDAO();
-        categoryDAO.excluir(id);
+        categoryDAO.delete(id);
     }
     
-    public void obter(int id) throws Exception {
+    public void find(int id) throws Exception {
         CategoryDAO categoryDAO = new CategoryDAO();
-        categoryDAO.obter(id);
+        categoryDAO.find(id);
     }
     
-    public List<Category> obterTodos() throws Exception {
+    public List<Category> findAll() throws Exception {
        CategoryDAO categoryDAO = new CategoryDAO();
-       return categoryDAO.obterTodos(); 
+       return categoryDAO.findAll(); 
     }
 }

@@ -75,7 +75,7 @@ public class UploadProductImageServlet extends HttpServlet {
                         image.write(new File(filePath));
                         
                         ProductNegocio productNegocio = new ProductNegocio();
-                        productNegocio.atualizarImage(filePath, id);
+                        productNegocio.updateImage(filePath, id);
                     
                         success= true; 
                         

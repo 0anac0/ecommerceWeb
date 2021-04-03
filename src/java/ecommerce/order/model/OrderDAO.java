@@ -36,7 +36,7 @@ public class OrderDAO {
     }
     
     
-    public void atualizar(Order o, int id) throws Exception {
+    public void update(Order o, int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         
         int resultado;
@@ -55,7 +55,7 @@ public class OrderDAO {
         }
     }
 
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -72,7 +72,7 @@ public class OrderDAO {
         }
     }
     
-    public Order obter(int id) throws Exception {
+    public Order find(int id) throws Exception {
         Order o = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -101,7 +101,7 @@ public class OrderDAO {
     }
 
     
-    public Order obterUltimoDoCliente(int id) throws Exception {
+    public Order findLastFromClient(int id) throws Exception {
         Order o = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -129,7 +129,7 @@ public class OrderDAO {
         return o;
     }
     
-    public List<Order> obterTodos() throws Exception {
+    public List<Order> findAll() throws Exception {
         List<Order> resultado = new ArrayList<>();
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -159,7 +159,7 @@ public class OrderDAO {
         return resultado;
     }
     
-    public List<Order> obterTodosCliente(int clientId) throws Exception {
+    public List<Order> findAllFromClient(int clientId) throws Exception {
         List<Order> resultado = new ArrayList<>();
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);

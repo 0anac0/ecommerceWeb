@@ -58,7 +58,7 @@ public class OrderItem {
 
     public Product getProduct() throws Exception {
         ProductNegocio productNegocio = new ProductNegocio();
-        return productNegocio.obter(product_id);
+        return productNegocio.find(product_id);
     }
     
     public Order getOrder() throws Exception {

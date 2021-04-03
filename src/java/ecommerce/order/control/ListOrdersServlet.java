@@ -30,7 +30,7 @@ public class ListOrdersServlet extends HttpServlet {
         //boolean success = (boolean) request.getAttribute("status");
 
         try {
-            orders = orderNegocio.obterTodos();
+            orders = orderNegocio.findAll();
         } catch (Exception ex) {
             message = ex.getMessage();
         }

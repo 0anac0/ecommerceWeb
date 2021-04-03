@@ -16,34 +16,34 @@ public class OrderItemNegocio {
         orderItemDAO.insert(i);
     }
     
-    public void excluir(Integer id) throws Exception {
+    public void delete(Integer id) throws Exception {
         OrderItemDAO orderItemDAO = new OrderItemDAO();
-        orderItemDAO.excluir(id);
+        orderItemDAO.delete(id);
     }
-    public OrderItem obter(Integer id) throws Exception {
+    public OrderItem find(Integer id) throws Exception {
         OrderItemDAO orderItemDAO = new OrderItemDAO();
-        OrderItem item = orderItemDAO.obter(id);
+        OrderItem item = orderItemDAO.find(id);
         return item;
     }
     
-    public List<OrderItem> obterTodos() throws Exception {
+    public List<OrderItem> findAll() throws Exception {
        OrderItemDAO orderItemDAO = new OrderItemDAO();
-       return orderItemDAO.obterTodos(); 
+       return orderItemDAO.findAll(); 
        
     }
     
-    public List<OrderItem> obterTodosPedido(Integer orderId) {
+    public List<OrderItem> findAllFromOrder(Integer orderId) {
        OrderItemDAO orderItemDAO = new OrderItemDAO();
        List<OrderItem> orderItems = new ArrayList<>();
        try {
-        orderItems = orderItemDAO.obterTodosPedido(orderId); 
+        orderItems = orderItemDAO.findAllFromOrder(orderId); 
        } catch (Exception ex) {
            
        }
        return orderItems;
     }
     
-    public float salvarItemsPedido(Integer orderId, List<CartItem> cartItems) throws Exception{
+    public float insertOrder(Integer orderId, List<CartItem> cartItems) throws Exception{
         float orderTotalValue=0;
         for (CartItem item : cartItems){
             OrderItem orderItem = new OrderItem();

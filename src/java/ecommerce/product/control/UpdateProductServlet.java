@@ -30,7 +30,7 @@ public class UpdateProductServlet extends HttpServlet {
                 int id = Integer.parseInt(productId);
                 ProductNegocio productNegocio = new ProductNegocio();
                 Product p = new Product();
-                p = productNegocio.obter(id);
+                p = productNegocio.find(id);
                 request.setAttribute("product", p);
                 success = true;
                 message = null;

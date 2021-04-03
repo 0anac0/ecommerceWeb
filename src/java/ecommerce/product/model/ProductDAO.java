@@ -39,7 +39,7 @@ public class ProductDAO {
         }
     }
 
-    public void atualizar(Product p, int id) throws Exception {
+    public void update(Product p, int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -63,7 +63,7 @@ public class ProductDAO {
     }
     
     
-    public void atualizarImage(String imagePath, int id) throws Exception {
+    public void updateImage(String imagePath, int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -81,7 +81,7 @@ public class ProductDAO {
         }
     }
     
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
@@ -98,7 +98,7 @@ public class ProductDAO {
         }
     }
     
-    public Product obter(int id) throws Exception {
+    public Product find(int id) throws Exception {
         Product p = null;
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
@@ -130,7 +130,7 @@ public class ProductDAO {
     }
 
     
-    public List<Product> obterTodos() throws Exception {
+    public List<Product> findAll() throws Exception {
         List<Product> resultado = new ArrayList<Product>();
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);

@@ -33,7 +33,7 @@ public class ListProductsServlet extends HttpServlet {
         List<Product> products = new ArrayList<>();
         String message = "";
         try {
-            products = productNegocio.obterTodos();
+            products = productNegocio.findAll();
         } catch (Exception ex) {
             message = ex.getMessage();
         }

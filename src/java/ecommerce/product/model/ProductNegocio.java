@@ -19,30 +19,30 @@ public class ProductNegocio {
         productDAO.insert(p);
     }
     
-    public void atualizar(Product p, int id) throws Exception {
+    public void update(Product p, int id) throws Exception {
         ProductDAO productDAO = new ProductDAO();
-        productDAO.atualizar(p, id);
+        productDAO.update(p, id);
     }
     
     
-    public void atualizarImage(String imagePath, int id) throws Exception {
+    public void updateImage(String imagePath, int id) throws Exception {
         ProductDAO productDAO = new ProductDAO();
-        productDAO.atualizarImage(imagePath, id);
+        productDAO.updateImage(imagePath, id);
     }
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         ProductDAO productDAO = new ProductDAO();
-        productDAO.excluir(id);
+        productDAO.delete(id);
     }
-    public Product obter(int id) throws Exception {
+    public Product find(int id) throws Exception {
         ProductDAO productDAO = new ProductDAO();
-        Product product = productDAO.obter(id);
+        Product product = productDAO.find(id);
         return product;
         
     }
     
-    public List<Product> obterTodos() throws Exception {
+    public List<Product> findAll() throws Exception {
        ProductDAO productDAO = new ProductDAO();
-       return productDAO.obterTodos(); 
+       return productDAO.findAll(); 
        
     }
     public List<Product> mockObter() {

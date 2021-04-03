@@ -65,13 +65,13 @@ public class Order {
     
     public Client getClient () throws Exception {
         ClientNegocio clientNegocio = new ClientNegocio();
-        Client client = clientNegocio.obter(client_id);
+        Client client = clientNegocio.find(client_id);
         return client;
     }
     
     public List<OrderItem> getOrderItems () throws Exception {
         OrderItemNegocio orderItemNegocio = new OrderItemNegocio();
-        List<OrderItem> orderItems = orderItemNegocio.obterTodosPedido(id);
+        List<OrderItem> orderItems = orderItemNegocio.findAllFromOrder(id);
         return orderItems;
     }
 

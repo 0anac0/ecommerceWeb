@@ -56,7 +56,7 @@ public class CartNegocio {
     public static CartItem getCartItem(String cartItemString) throws Exception {
         String[] item = cartItemString.split(QUANTITY_SPLITTER);
         ProductNegocio productNegocio = new ProductNegocio();
-        Product product = productNegocio.obter(Integer.parseInt(item[0]));
+        Product product = productNegocio.find(Integer.parseInt(item[0]));
         CartItem cartItem = new CartItem();
                 
         cartItem.setProduct(product);
@@ -95,7 +95,7 @@ public class CartNegocio {
         if (!alreadyOnCart) {
             CartItem cartItem = new CartItem();
             cartItem.setQuantity(quantity);
-            cartItem.setProduct(productNegocio.obter(productId));
+            cartItem.setProduct(productNegocio.find(productId));
             cartItems.add(cartItem);
         }
         return getCookieString(cartItems);

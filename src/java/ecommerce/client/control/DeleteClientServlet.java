@@ -41,7 +41,7 @@ public class DeleteClientServlet extends HttpServlet {
             int id = client.getId();
             ClientNegocio clientNegocio = new ClientNegocio();
             try {
-                clientNegocio.excluir(id);
+                clientNegocio.delete(id);
                 success = true;
                 message = "Cliente apagado!";
             } catch (Exception ex) {

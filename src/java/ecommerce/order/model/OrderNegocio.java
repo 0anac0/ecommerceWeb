@@ -18,47 +18,47 @@ public class OrderNegocio {
         orderDAO.insert(o);
     }
     
-    public void excluir(Integer id) throws Exception {
+    public void delete(Integer id) throws Exception {
         OrderDAO orderDAO = new OrderDAO();
         OrderItemDAO orderItemDAO = new OrderItemDAO();
-        orderItemDAO.excluirTodosPedido(id);
-        orderDAO.excluir(id);
+        orderItemDAO.deleteAllFromOrder(id);
+        orderDAO.delete(id);
     }
     public Order obter(Integer id) throws Exception {
         OrderDAO orderDAO = new OrderDAO();
-        Order order = orderDAO.obter(id);
+        Order order = orderDAO.find(id);
         return order;
     }
     
-    public List<Order> obterTodos() throws Exception {
+    public List<Order> findAll() throws Exception {
        OrderDAO orderDAO = new OrderDAO();
-       return orderDAO.obterTodos(); 
+       return orderDAO.findAll(); 
        
     }
     
-    public void atualizar(Order o, int id) throws Exception {
+    public void update(Order o, int id) throws Exception {
         OrderDAO orderDAO = new OrderDAO();
-        orderDAO.atualizar(o, id);
+        orderDAO.update(o, id);
     }
     
-    public List<Order> obterTodosDoCliente(int clientId) throws Exception {
+    public List<Order> findAllFromClient(int clientId) throws Exception {
        OrderDAO orderDAO = new OrderDAO();
-       return orderDAO.obterTodosCliente(clientId);
+       return orderDAO.findAllFromClient(clientId);
     }
     
-    public Order obterUltimoDoCliente(int clientId) throws Exception {
+    public Order findLastFromClient(int clientId) throws Exception {
        OrderDAO orderDAO = new OrderDAO();
-       return orderDAO.obterUltimoDoCliente(clientId);  
+       return orderDAO.findLastFromClient(clientId);  
     }
     
-    public Order salvarPedido(int clientId) throws Exception{
+    public Order saveOrder(int clientId) throws Exception{
         Order order = new Order();
         order.setTotal((float) 0);
         
         order.setClientId(clientId);
         this.insert(order);
         
-        order = this.obterUltimoDoCliente(clientId);
+        order = this.findLastFromClient(clientId);
         return order;
     }
 

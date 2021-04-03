@@ -11,22 +11,22 @@ package ecommerce.admin.model;
  */
 public class AdminNegocio {
     
-    public Admin obterLogin(String login) throws Exception {
+    public Admin findFromLogin(String login) throws Exception {
         AdminDAO adminDAO = new AdminDAO();
-        return adminDAO.obterLogin(login);
+        return adminDAO.findFromLogin(login);
     }
 
-    public void atualizar(Admin a, int id) throws Exception {
+    public void update(Admin a, int id) throws Exception {
         AdminDAO adminDAO = new AdminDAO();
-        adminDAO.atualizar(a, id);
+        adminDAO.update(a, id);
     }
-    public void excluir(int id) throws Exception {
+    public void delete(int id) throws Exception {
         AdminDAO adminDAO = new AdminDAO();
-        adminDAO.excluir(id);
+        adminDAO.delete(id);
     }
-    public Admin obter(int id) throws Exception {
+    public Admin find(int id) throws Exception {
         AdminDAO adminDAO = new AdminDAO();
-        return adminDAO.obter(id);
+        return adminDAO.find(id);
         
     }
     

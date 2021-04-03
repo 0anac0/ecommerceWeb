@@ -29,7 +29,7 @@ public class ListCategoriesServlet extends HttpServlet {
         List<Category> categories = new ArrayList<>();
         String message = "";
         try {
-            categories = categoryNegocio.obterTodos();
+            categories = categoryNegocio.findAll();
         } catch (Exception ex) {
             message = ex.getMessage();
         }
