@@ -71,9 +71,6 @@ public class OrderItemDAO {
         preparedStatement.close();
         connection.close();
         
-        if (resultado == 0) {
-            throw new Exception("Pedido não foi deletado!");
-        }
     }
     
     public OrderItem obter(Integer id) throws Exception {

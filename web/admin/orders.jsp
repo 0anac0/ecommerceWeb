@@ -1,13 +1,14 @@
 <%-- 
-    Document   : products
-    Created on : 29/03/2021, 22:22:40
+    Document   : orders
+    Created on : 02/04/2021, 21:12:40
     Author     : anacl
 --%>
+
 <%@ page import="java.util.List" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ecommerce.admin.model.Admin"%>
-<%@page import="ecommerce.product.model.Product"%>
+<%@page import="ecommerce.order.model.Order"%>
 
 <%
     if (session.getAttribute("user") == null){
@@ -25,7 +26,7 @@
             
             if((Boolean) session.getAttribute("admin") == true){
                 Admin admin = (Admin) session.getAttribute("user");
-                List<Product> products = (List) request.getAttribute("products");
+                List<Order> orders = (List) request.getAttribute("orders");
 %>
 <!DOCTYPE html>
 <html>
@@ -39,45 +40,38 @@
 
             <table>
                 <tr>
-                  <th>Nome</th>
-                  <th>Descrição</th>
-                  <th>Preço</th>
-                  <th>Imagem</th>
-                  <th>Quantidade</th>
-                  <th> </th>
+                  <th>Data de criação</th>
+                  <th>Cliente</th>
+                  <th>Valor total</th>
                   <th> </th>
                 </tr>
                 <%
-                    for (Product product : products) {
+                    for (Order order : orders) {
                 %>
                 <tr>
-                  <td><%=product.getName()%></td>
-                  <td><%=product.getDescription()%></td>
-                  <td><%=product.getPrice()%></td>
-                  <td><%=product.getImage()%></td>
-                  <td><%=product.getQuantity()%></td>
-                  <td><a href="ShowProductImageServlet?id=<%=product.getId()%>">Editar Imagem</a></td>
-                  <td><a href="UpdateProductServlet?id=<%=product.getId()%>">Editar Produto</a></td>
+                  <td><%=order.getCreatedAt()%></td>
+                  <td><%=order.getClient().getName()%></td>
+                  <td>R$<%=order.getTotal()%></td>
+                  <td><a href="DeleteOrderServlet?id=<%=order.getId()%>">Excluir pedido</a></td>
                 </tr>
                 <%
                 }
                 %>
             </table>
-            <div id="options">
-                <div class="adm-opt">
-                     <h3><a href="/ecommerceWeb/admin/new-product.jsp">Adicionar Produto</a></h3> 
-                </div>
-            </div>
-        </div>
-        <%
-        if (request.getAttribute("message") != null && request.getAttribute("status") != null ) {
-            boolean status = Boolean.parseBoolean(request.getAttribute("status").toString());
-            final String classe = status ? "success" : "failure";
-            %>
-                <div class="<%=classe %>"><%=request.getAttribute("message")%></div>
             <%
-        }    
-        %>
+            if (request.getAttribute("message") != null) {
+                boolean status = true;
+                if (request.getAttribute("status") != null ) {
+                  status = Boolean.parseBoolean(request.getAttribute("status").toString());
+                }
+                final String classe = status ? "alert-amarelo" : "alert";
+                %>
+                    <div id="<%=classe %>"><%=request.getAttribute("message")%></div>
+                <%
+            }    
+            %>
+        </div>
+        
     </body>
     
 </html>

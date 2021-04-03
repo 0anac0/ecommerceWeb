@@ -313,7 +313,7 @@ a{
 }
 
 
-.form-container #containerLogin #alert{
+#alert{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -330,12 +330,12 @@ a{
     
     box-sizing: border-box;
 }
-.form-container #containerLogin #alert:hover{
+#alert:hover{
       background-color: #B33737;
       cursor: pointer;
       
 }
-.form-container #containerLogin #alert-amarelo{
+#alert-amarelo{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -353,7 +353,7 @@ a{
     
     box-sizing: border-box;
 }
-.form-container #containerLogin #alert-amarelo:hover{
+#alert-amarelo:hover{
       background-color:#D6C502;
       cursor: pointer;
       

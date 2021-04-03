@@ -7,60 +7,51 @@ package ecommerce.product.control;
 
 import ecommerce.product.model.Product;
 import ecommerce.product.model.ProductNegocio;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.RequestDispatcher;
 
-/*
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.RequestDispatcher;
-*/
+public class ApplyUpdateProductServlet extends HttpServlet {
 
-/**
- *
- * @author anacl
- */
-public class InsertProductServlet extends HttpServlet {
-    
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // entrada
-        String name = request.getParameter("name");
-        String description = request.getParameter("description");
-        String image = request.getParameter("image");
-        double price = Double.valueOf(request.getParameter("price")) ;
+        //Entrada
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = (String) request.getParameter("name");
+        String description = (String) request.getParameter("description");
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        // processamento
-        Product product = new Product();
-        product.setName(name);
-        product.setQuantity(quantity);
-        product.setPrice(price);
-        product.setDescription(description);
-        product.setImage(image);
+        float price = Float.parseFloat(request.getParameter("price"));
+        String image = (String) request.getParameter("image");
         
-        boolean success = false;
-        String message = "Produto inserido com sucesso!";
         ProductNegocio productNegocio = new ProductNegocio();
+        boolean success = false;
+        String message = "Não foi possível alterar o produto";
+        //Processamento
         try {
-            productNegocio.insert(product);
+            Product p = new Product();
+            p.setId(id);
+            p.setName(name);
+            p.setDescription(description);
+            p.setQuantity(quantity);
+            p.setPrice(price);
+            p.setImage(image);
+            productNegocio.atualizar(p, id);
             success = true;
+            message = "Produto atualizado com sucesso";
         } catch (Exception ex) {
             message = ex.getMessage();
         }
-        // saída
+        
+        //Saída        
         request.setAttribute("status", success);
         request.setAttribute("message", message);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListProductsServlet");
         requestDispatcher.forward(request, response);
     }
+
 }
+

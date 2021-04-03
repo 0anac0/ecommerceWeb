@@ -73,7 +73,7 @@ public class InsertOrderServlet extends HttpServlet {
 
         request.setAttribute("status", success);
         request.setAttribute("message", message);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("login-cadastro.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(destiny);
         requestDispatcher.forward(request, response);
     }
 

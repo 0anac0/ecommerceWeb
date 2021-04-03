@@ -42,6 +42,9 @@
             <div class="adm-opt">
                  <h3><a href="/ecommerceWeb/ListProductsServlet">Produtos</a></h3> 
             </div>
+            <div class="adm-opt">
+                 <h3><a href="/ecommerceWeb/ListOrdersServlet">Pedidos</a></h3> 
+            </div>
             
             <div class="adm-opt delete">
                  <h3 ><a href="/ecommerceWeb/LogoutServlet">Sair</a></h3> 
@@ -49,7 +52,6 @@
                 
                 
         </div>
-        <a href="../LogoutServlet">Sair</a>
     </body>/
 </html>
 <%      } else {
