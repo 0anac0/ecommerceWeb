@@ -23,7 +23,7 @@
         
         <section id="content">
             <%  ProductNegocio productNegocio = new ProductNegocio();
-                List<Product> products = productNegocio.findAll();
+                List<Product> products = productNegocio.findAllInStock();
                 for (int i = 0; i < products.size(); i++){
             %>
             <article class="item"> <img src="img/produto1.svg"></img>

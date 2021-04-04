@@ -69,7 +69,7 @@
                 <div id="linha"></div>
               
                 <div id="bts">
-                    <button class="bt-form"  onclick="edita()">Editar</button>
+                    <button class="bt-form" ><a href="/ecommerceWeb/admin/edit-admin.jsp">Editar</a></button>
                     <button class="delete" ><a href="../DeleteAdminServlet">Apagar Cadastro</a></button>
                     <button class="delete" ><a href="../LogoutServlet">Sair</a></button>
 

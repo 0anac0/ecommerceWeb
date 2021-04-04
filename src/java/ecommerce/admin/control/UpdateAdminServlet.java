@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ecommerce.client.control;
+package ecommerce.admin.control;
 
-import ecommerce.client.model.Client;
-import ecommerce.client.model.ClientNegocio;
+import ecommerce.admin.model.Admin;
+import ecommerce.admin.model.AdminNegocio;
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
@@ -18,45 +18,42 @@ import jakarta.servlet.http.HttpSession;
 /**
  *
  * @author anacl
- * Classe de controle que realiza a inserção do cliente
  */
-public class AlterClientServlet extends HttpServlet {
-
+public class UpdateAdminServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //incializando
+                //incializando
         String message = null;
         Boolean success = false;
         HttpSession session = request.getSession(true);
+        
         // entrada
         String name = request.getParameter("name");
-        String address = request.getParameter("address");
         String email = request.getParameter("email");
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         // processamento
-        if (session.getAttribute("user") == null) {
-            message = "Cliente não encontrado!";
+        if (session.getAttribute("user") == null || (boolean) session.getAttribute("admin") != true) {
+            message = "Admin não encontrado!";
         } else {
-            Client sessionClient = (Client) session.getAttribute("user");
-            int id = sessionClient.getId();
+            Admin sessionAdmin = (Admin) session.getAttribute("user");
+            int id = sessionAdmin.getId();
             
 
-            Client client = new Client();
-            client.setId(id);
-            client.setName(name);
-            client.setAddress(address);
-            client.setEmail(email);
-            client.setLogin(login);
-            client.setPassword(password);
+            Admin admin = new Admin();
+            admin.setId(id);
+            admin.setName(name);
+            admin.setEmail(email);
+            admin.setLogin(login);
+            admin.setPassword(password);
 
-            ClientNegocio clientNegocio = new ClientNegocio();
+            AdminNegocio adminNegocio = new AdminNegocio();
             try {
-                clientNegocio.update(client, id);
+                adminNegocio.update(admin, id);
                 success = true;
-                session.setAttribute("user", client);
-                session.setAttribute("username", client.getName());
+                session.setAttribute("user", admin);
+                session.setAttribute("username", admin.getName());
 
                 message = "Atualização feita com sucesso!";
             } catch (Exception ex) {
@@ -66,7 +63,7 @@ public class AlterClientServlet extends HttpServlet {
         // saída
         request.setAttribute("status", success);
         request.setAttribute("message", message);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("client.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("admin/data.jsp");
         requestDispatcher.forward(request, response);
     }
 

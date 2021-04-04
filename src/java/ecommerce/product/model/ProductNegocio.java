@@ -43,8 +43,13 @@ public class ProductNegocio {
     public List<Product> findAll() throws Exception {
        ProductDAO productDAO = new ProductDAO();
        return productDAO.findAll(); 
-       
     }
+    
+    public List<Product> findAllInStock() throws Exception {
+       ProductDAO productDAO = new ProductDAO();
+       return productDAO.findAllInStock(); 
+    }
+    
     public List<Product> mockObter() {
         List<Product> resultado = new ArrayList<Product>();
             Product p = new Product();

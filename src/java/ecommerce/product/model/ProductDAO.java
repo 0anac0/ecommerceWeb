@@ -135,7 +135,7 @@ public class ProductDAO {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM products"
+                "SELECT * FROM products order by name asc"
         );
         ResultSet resultSet = preparedStatement.executeQuery();
         
@@ -154,9 +154,33 @@ public class ProductDAO {
         preparedStatement.close();
         connection.close();
         
-        if (resultado.isEmpty()) {
-            throw new Exception("Nenhum produto encontrado!");
+        return resultado;
+    }
+    
+    public List<Product> findAllInStock() throws Exception {
+        List<Product> resultado = new ArrayList<Product>();
+        Class.forName("org.postgresql.Driver");
+        Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
+        PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT * FROM products WHERE quantity > 0 order by name asc"
+        );
+        ResultSet resultSet = preparedStatement.executeQuery();
+        
+        while (resultSet.next()) {
+            Product p = new Product();
+            p.setId(resultSet.getInt("id"));
+            p.setDescription(resultSet.getString("description"));
+            p.setImage(resultSet.getString("image"));
+            p.setName(resultSet.getString("name"));
+            p.setQuantity(resultSet.getInt("quantity"));
+            p.setPrice(resultSet.getDouble("price"));
+            resultado.add(p);
+                    
         }
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+        
         return resultado;
     }
 }
