@@ -48,11 +48,11 @@ public class InsertOrderServlet extends HttpServlet {
                 
                 Order order = orderNegocio.saveOrder(currentUser.getId());
 
-                // adicionar os itens
+                // instanciar os itens
                 List<CartItem> cartItems = CartNegocio.getCartItemsFromRequest(request);
                 OrderItemNegocio orderItemNegocio = new OrderItemNegocio();
                 
-                //salvar os itens e pegar o valor total do pedido
+                // salvar os itens e pegar o valor total do pedido
                 float totalValue = orderItemNegocio.insertOrder(order.getId(), cartItems);
                 order.setTotal(totalValue);
                 orderNegocio.update(order, order.getId());

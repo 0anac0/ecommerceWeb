@@ -88,6 +88,18 @@
         <servlet-name>ApplyUpdateProductServlet</servlet-name>
         <servlet-class>ecommerce.product.control.ApplyUpdateProductServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SalesReportServlet</servlet-name>
+        <servlet-class>ecommerce.reports.control.SalesReportServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ClientSalesReportServlet</servlet-name>
+        <servlet-class>ecommerce.reports.control.ClientSalesReportServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductsOutOfStockReportServlet</servlet-name>
+        <servlet-class>ecommerce.reports.control.ProductsOutOfStockReportServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -178,6 +190,18 @@
     <servlet-mapping>
         <servlet-name>ApplyUpdateProductServlet</servlet-name>
         <url-pattern>/ApplyUpdateProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SalesReportServlet</servlet-name>
+        <url-pattern>/SalesReportServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClientSalesReportServlet</servlet-name>
+        <url-pattern>/ClientSalesReportServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductsOutOfStockReportServlet</servlet-name>
+        <url-pattern>/ProductsOutOfStockReportServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

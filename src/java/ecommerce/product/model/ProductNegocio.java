@@ -57,5 +57,14 @@ public class ProductNegocio {
             resultado.add(p);
         return resultado;
     }
+    
+    public void consumeQuantity(Product product, int quantity) throws Exception{
+        int oldProductQuantity = product.getQuantity();
+            
+        product.setQuantity(oldProductQuantity - quantity);
+        
+        this.update(product, product.getId());
+            
+    }
 
 }

@@ -2,6 +2,7 @@ package ecommerce.order_item.model;
 
 import ecommerce.cart.model.CartItem;
 import ecommerce.product.model.Product;
+import ecommerce.product.model.ProductNegocio;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,13 +48,23 @@ public class OrderItemNegocio {
         float orderTotalValue=0;
         for (CartItem item : cartItems){
             OrderItem orderItem = new OrderItem();
+            int itemQuantity = item.getQuantity();
             Product product = item.getProduct();
+
+            // consumir do estoque
+            ProductNegocio productNegocio = new ProductNegocio();
+            productNegocio.consumeQuantity(product, itemQuantity);
+
+            // instanciar o item
             orderItem.setProductId(product.getId());
             orderItem.setOrderId(orderId);
-            orderItem.setQuantity(item.getQuantity());
+            orderItem.setQuantity(itemQuantity);
             float itemPrice = (float) product.getPrice()*item.getQuantity();
             orderItem.setPrice(itemPrice);
+
+            //salvar o item
             this.insert(orderItem);
+            // iterar o total do item no total da compra
             orderTotalValue += itemPrice;
         }
         return orderTotalValue;

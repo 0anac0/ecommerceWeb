@@ -65,11 +65,11 @@ public class UploadProductImageServlet extends HttpServlet {
                         id = Integer.parseInt(item.getString());
                     }
                     if(id != -1 && image != null) {
-                        message = "mlr entrou ne agr o q deu errado nsei";
+                        message = "entrou no if";
                         
                         System.out.println("oientrou");
                         String extension = image.getName().substring(image.getName().lastIndexOf('.'));
-                        String filePath = "C:\\Users\\anacl\\Downloads\\boxta.png";
+                        String filePath = "C:\\Users\\anacl\\Downloads\\imageproduto.png";
                         
                         System.out.println("filePath "+ filePath);
                         image.write(new File(filePath));
