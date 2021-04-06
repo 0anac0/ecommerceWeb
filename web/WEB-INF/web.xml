@@ -104,6 +104,22 @@
         <servlet-name>UpdateAdminServlet</servlet-name>
         <servlet-class>ecommerce.admin.control.UpdateAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateCategoryServlet</servlet-name>
+        <servlet-class>ecommerce.category.control.UpdateCategoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteProductCategoryServlet</servlet-name>
+        <servlet-class>ecommerce.product_category.control.DeleteProductCategoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApplyUpdateCategoryServlet</servlet-name>
+        <servlet-class>ecommerce.category.control.ApplyUpdateCategoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertProductCategoryServlet</servlet-name>
+        <servlet-class>ecommerce.product_category.control.InsertProductCategoryServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -210,6 +226,22 @@
     <servlet-mapping>
         <servlet-name>UpdateAdminServlet</servlet-name>
         <url-pattern>/UpdateAdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCategoryServlet</servlet-name>
+        <url-pattern>/UpdateCategoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteProductCategoryServlet</servlet-name>
+        <url-pattern>/DeleteProductCategoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplyUpdateCategoryServlet</servlet-name>
+        <url-pattern>/ApplyUpdateCategoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertProductCategoryServlet</servlet-name>
+        <url-pattern>/InsertProductCategoryServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

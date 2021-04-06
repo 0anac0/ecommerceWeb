@@ -3,36 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ecommerce.order.control;
+package ecommerce.product_category.control;
 
-import ecommerce.order.model.OrderNegocio;
+import ecommerce.product_category.model.ProductCategoryDAO;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.RequestDispatcher;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author anacl
  */
-public class DeleteOrderServlet extends HttpServlet {
+public class DeleteProductCategoryServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Entrada
-        String id = request.getParameter("id");
-        OrderNegocio orderNegocio = new OrderNegocio();
-        String message = null;
+        String productId = request.getParameter("productId");
+        String categoryId = request.getParameter("categoryId");
+        ProductCategoryDAO productCategoryDAO = new ProductCategoryDAO();
+        String message = "algo não correu corretamente!";
         boolean success = false;
-        message = "Ocorreu algum erro";
-        //Processamento
-        
+        // Processamento
         try {
-            orderNegocio.delete(Integer.parseInt(id));
+            productCategoryDAO.delete(Integer.parseInt(productId),
+                                      Integer.parseInt(categoryId));
             success = true;
-            message = "Pedido excluído com sucesso";
+            message = "Removido com sucesso!";
         } catch (Exception ex) {
             message = ex.getMessage();
         }
@@ -41,8 +45,8 @@ public class DeleteOrderServlet extends HttpServlet {
         request.setAttribute("status", success);
         request.setAttribute("message", message);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListOrdersServlet");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("UpdateCategoryServlet?id="+categoryId);
         requestDispatcher.forward(request, response);
+    
     }
-
 }

@@ -3,46 +3,47 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ecommerce.order.control;
+package ecommerce.category.control;
 
-import ecommerce.order.model.OrderNegocio;
+import ecommerce.category.model.Category;
+import ecommerce.category.model.CategoryNegocio;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.RequestDispatcher;
-/**
- *
- * @author anacl
- */
-public class DeleteOrderServlet extends HttpServlet {
+
+public class ApplyUpdateCategoryServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Entrada
-        String id = request.getParameter("id");
-        OrderNegocio orderNegocio = new OrderNegocio();
-        String message = null;
-        boolean success = false;
-        message = "Ocorreu algum erro";
-        //Processamento
+        //Entrada
+        int id = Integer.parseInt(request.getParameter("id"));
+        String description = (String) request.getParameter("description");
         
+        CategoryNegocio categoryNegocio = new CategoryNegocio();
+        boolean success = false;
+        String message = "Não foi possível alterar a categoria";
+        //Processamento
         try {
-            orderNegocio.delete(Integer.parseInt(id));
+            Category c = new Category();
+            c.setId(id);
+            c.setDescription(description);
+            categoryNegocio.update(c, id);
             success = true;
-            message = "Pedido excluído com sucesso";
+            message = "Categoria atualizada com sucesso";
         } catch (Exception ex) {
             message = ex.getMessage();
         }
         
-        // Saída
+        //Saída        
         request.setAttribute("status", success);
         request.setAttribute("message", message);
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListOrdersServlet");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("ListCategoriesServlet");
         requestDispatcher.forward(request, response);
     }
 
 }
+

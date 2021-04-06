@@ -15,7 +15,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  *
  * @author anacl
@@ -105,7 +104,7 @@ public class CategoryDAO {
         Class.forName("org.postgresql.Driver");
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
-                "SELECT * FROM categories"
+                "SELECT * FROM categories ORDER BY id"
         );
         ResultSet resultSet = preparedStatement.executeQuery();
         
@@ -120,9 +119,6 @@ public class CategoryDAO {
         preparedStatement.close();
         connection.close();
         
-        if (resultado.isEmpty()) {
-            throw new Exception("Nenhuma categoria encontrada!");
-        }
         return resultado;
     }
     
@@ -132,7 +128,7 @@ public class CategoryDAO {
         Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
         PreparedStatement preparedStatement = connection.prepareStatement(
                 "SELECT p.* FROM products p "
-                        + "INNER JOIN product_categories pc ON pc.product_id = p.id"
+                        + "INNER JOIN product_categories pc ON pc.product_id = p.id "
                         + "WHERE pc.category_id = ?"
         );
                 
@@ -154,9 +150,6 @@ public class CategoryDAO {
         preparedStatement.close();
         connection.close();
         
-        if (resultado.isEmpty()) {
-            throw new Exception("Nenhum produto encontrado para a categoria!");
-        }
         return resultado;
     }
 

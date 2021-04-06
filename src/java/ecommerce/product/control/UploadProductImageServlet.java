@@ -18,6 +18,15 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.RequestContext;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.fileupload.servlet.ServletRequestContext;
+
 //import org.apache.tomcat.util.http.fileupload.FileItem;
 //import org.apache.tomcat.util.http.fileupload.RequestContext;
 //import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
@@ -83,6 +92,7 @@ public class UploadProductImageServlet extends HttpServlet {
                 }
             } catch (Exception ex) {
                 success = false;
+                ex.printStackTrace();
             }
         }
         //String message = success ? "Imagem atualizada" : "Não foi possível salvar a imagem";

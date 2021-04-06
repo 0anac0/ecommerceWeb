@@ -4,10 +4,12 @@
     Author     : anacl
 --%>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="ecommerce.admin.model.Admin"%>
 <%@page import="ecommerce.category.model.Category"%>
+<%@page import="ecommerce.product.model.Product"%>
 
 <%
     if (session.getAttribute("user") == null){
@@ -40,14 +42,23 @@
             <table>
                 <tr>
                   <th>Descrição</th>
+                  <th>Produtos</th>
                   <th> </th>
                 </tr>
                 <%
                     for (Category category : categories) {
+                        List<Product> products = new ArrayList<>();
+                        products = category.getProducts();
                 %>
                 <tr>
                   <td><%=category.getDescription()%></td>
-                  <td>Editar</td>
+                  
+                  <td>
+                    <% for (Product product : products) {%>
+                    <span> <%=product.getName()%>;</span>
+                    <%}%>
+                  </td>
+                  <td> <a href="/ecommerceWeb/UpdateCategoryServlet?id=<%=category.getId()%>">Editar</a></td>
                 </tr>
                 <%
                 }

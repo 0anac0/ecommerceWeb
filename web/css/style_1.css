@@ -189,10 +189,7 @@ input .nomeSenha{
     color: var(--auxiliar-2);
     
 }
-.item .product-image:hover {
-    background: #FF0000;
-    
-}
+
 
 /*Estilizando botoes e input*/
 

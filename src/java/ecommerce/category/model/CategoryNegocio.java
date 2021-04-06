@@ -28,9 +28,9 @@ public class CategoryNegocio {
         categoryDAO.delete(id);
     }
     
-    public void find(int id) throws Exception {
+    public Category find(int id) throws Exception {
         CategoryDAO categoryDAO = new CategoryDAO();
-        categoryDAO.find(id);
+        return categoryDAO.find(id);
     }
     
     public List<Category> findAll() throws Exception {
