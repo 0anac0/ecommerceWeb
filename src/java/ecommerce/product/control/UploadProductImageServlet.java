@@ -36,9 +36,10 @@ public class UploadProductImageServlet extends HttpServlet {
         // processamento
         try {
             // salvar arquivo
-            String filePath = "C:\\upload\\"+productId+".png";
+            String projectPath = "C:\\users\\anacl\\OneDrive\\Documents\\NetBeansProjects\\ecommerceWeb\\web\\";
+            String filePath = "img\\tmp\\"+productId+".png";
             for (Part part : request.getParts()) {
-                part.write(filePath);
+                part.write(projectPath + filePath);
             }
             
             //salvar path no banco

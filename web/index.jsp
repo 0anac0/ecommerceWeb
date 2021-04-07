@@ -26,7 +26,8 @@
                 List<Product> products = productNegocio.findAllInStock();
                 for (int i = 0; i < products.size(); i++){
             %>
-            <article class="item"> <img src="C:\\upload\\1.png"></img>
+            <article class="item"> 
+                <img style="max-width: 300px;"src="<%= products.get(i).getImage()%>"></img>
                 <h3><%=products.get(i).getName()%></h3>
                 <p class="price">R$ <%=products.get(i).getPrice()%></p>
                 <form action="AddCartItemServlet">

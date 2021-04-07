@@ -39,7 +39,8 @@
                                 <p ><%= product.getName()%></p>
                                 <a href="RemoveCartItemServlet?productId=<%= product.getId()%>"><img src='img/cancel.svg' width="10" height='10'></a>
                             </div>
-                            <img class="item-preview" src="img/produto1.svg"></img>
+                            <img class="item-preview" src="<%= product.getImage()%>"></img>
+                            
                             <p class="price">R$ <%= product.getPrice()*cartItem.getQuantity()%></p>
                             <p id="quantidade"><%= cartItem.getQuantity() %> </p>
                             <div id='produto-carac'>

@@ -65,7 +65,7 @@
                     %>
                     <div>Este produto não possui imagem ainda.</div>
                     <%  } else { %>
-                       <div>Este produto possui imagem.</div>
+                    <div><a href="DownloadProductImageServlet?id=<%=product.getId()%>">Baixar imagem do produto</a></div>
                     <%
                     }
                     %>
