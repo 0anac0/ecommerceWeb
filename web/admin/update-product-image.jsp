@@ -37,33 +37,43 @@
     </head>
     <body>
         <%@ include file="../components/header.jsp" %> 
-            
-        <%if (request.getAttribute("message") != null){%>
-        <div>O CARALO: <%=request.getAttribute("message")  %></div>
-        <% 
-        }
+          <%
+            if (request.getAttribute("message") != null && request.getAttribute("status") != null ) {
+                boolean status = Boolean.parseBoolean(request.getAttribute("status").toString());
+                final String id = status ? "alert-amarelo" : "alert";
         %>
-        <h1>Hello World!</h1>
-            <h1><%=product.getName()%></h1>
-            <form action="UploadProductImageServlet" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<%=product.getId()%>">
-                
-                <div>Foto atual:</div>
-                
-                <%
-                if (product.getImage() ==null || product.getImage().trim().length() == 0) {
-                %>
-                <div>Este produto não possui imagem ainda.</div>
-                <%  } else { %>
-                   <div>Este produto possui imagem.</div>
-                <%
-                }
-                %>
-                <div>Nova foto:</div>
-                <div><input type="file" name="image"></div>
-                <input type="submit" value="Atualizar foto">
-            </form>    
+                <div id="<%=id%>" onclick='alerta()'>
+                    <% if (id == "alert") { %>
+                        <a><img src="/ecommerceWeb/img/cancel.svg" width="20" height="20"></a>
+                    <% } %>
+                    <p><%=request.getAttribute("message")%></p>
+                </div>
+        <%
+            }
+        %>
+        <h2 id="title">Editar imagem do produto </h2>
+        <h3 class="sub-title">"<%=product.getName()%>"!</h3>
+            <div class="form-container">
             
+                <form action="UploadProductImageServlet" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<%=product.getId()%>">
+
+                    <div>Foto atual:</div>
+
+                    <%
+                    if (product.getImage() ==null || product.getImage().trim().length() == 0) {
+                    %>
+                    <div>Este produto não possui imagem ainda.</div>
+                    <%  } else { %>
+                       <div>Este produto possui imagem.</div>
+                    <%
+                    }
+                    %>
+                    <div>Nova foto:</div>
+                    <div><input type="file" name="image"></div>
+                    <input type="submit" value="Atualizar foto">
+                </form>    
+            </div>
     </body>
 </html>
 <%      } else {

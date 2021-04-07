@@ -3,100 +3,57 @@ package ecommerce.product.control;
 import ecommerce.product.model.Product;
 import ecommerce.product.model.ProductNegocio;
 import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletContext;
-
-import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.PrintStream;
-import java.util.Iterator;
-import java.util.List;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.RequestContext;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import java.io.File;
+import jakarta.servlet.http.Part;
+
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.fileupload.servlet.ServletRequestContext;
-
-//import org.apache.tomcat.util.http.fileupload.FileItem;
-//import org.apache.tomcat.util.http.fileupload.RequestContext;
-//import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
-//import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
-
-
-/*import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-/*
 
 /**
  *
  * @author anacl
  */
+@WebServlet
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 1, //1MB
+        maxFileSize = 1024 * 1024 * 10, //10MB
+        maxRequestSize = 1024 * 1024 * 100 //100MB
+)
 public class UploadProductImageServlet extends HttpServlet {
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = -1;
-        FileItem image = null;
-        String message = "deu errado mlr";
-        boolean success=false;
+        // Entrada
+        String productId = (String) request.getParameter("id");
         
-        if (true) {
-            message = "pelo menos eh multipart";
-            try {
-                DiskFileItemFactory factory = new DiskFileItemFactory();
-                ServletContext servletContext = this.getServletConfig().getServletContext();
-                File repository = (File) servletContext.getAttribute("jakarta.servlet.context.tempdir");
-                factory.setRepository(repository);
-                
-                ServletFileUpload upload = new ServletFileUpload(factory);
-                List<FileItem> items = upload.parseRequest((RequestContext) request);
-                Iterator<FileItem> iter = items.iterator();
-                while (iter.hasNext()) {
-                    FileItem item = iter.next();
-                    if (!item.isFormField() && item.getFieldName().equals("image")) {
-                        image = item;
-                        
-                    }
-                    if (item.isFormField() && item.getFieldName().equals("id")){
-                        id = Integer.parseInt(item.getString());
-                    }
-                    if(id != -1 && image != null) {
-                        message = "entrou no if";
-                        
-                        System.out.println("oientrou");
-                        String extension = image.getName().substring(image.getName().lastIndexOf('.'));
-                        String filePath = "C:\\Users\\anacl\\Downloads\\imageproduto.png";
-                        
-                        System.out.println("filePath "+ filePath);
-                        image.write(new File(filePath));
-                        
-                        ProductNegocio productNegocio = new ProductNegocio();
-                        productNegocio.updateImage(filePath, id);
-                    
-                        success= true; 
-                        
-                    }
-                }
-            } catch (Exception ex) {
-                success = false;
-                ex.printStackTrace();
+        boolean success = false;
+        String message = "Imagem atualizada!";
+        // processamento
+        try {
+            // salvar arquivo
+            String filePath = "C:\\upload\\"+productId+".png";
+            for (Part part : request.getParts()) {
+                part.write(filePath);
             }
+            
+            //salvar path no banco
+            ProductNegocio productNegocio = new ProductNegocio();
+            Product product = productNegocio.find(Integer.parseInt(productId));
+            product.setImage(filePath);
+            productNegocio.update(product, Integer.parseInt(productId));
+            success = true;
+        } catch (Exception ex) {
+            message = "Algo correu errado: "+ ex.getMessage();
         }
-        //String message = success ? "Imagem atualizada" : "Não foi possível salvar a imagem";
+        
+        //saída
         request.setAttribute("message", message);
+        request.setAttribute("status", success);
         RequestDispatcher dispatcher = request.getRequestDispatcher("ShowProductImageServlet");
         dispatcher.forward(request, response);
     }

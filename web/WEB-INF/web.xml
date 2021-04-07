@@ -120,6 +120,10 @@
         <servlet-name>InsertProductCategoryServlet</servlet-name>
         <servlet-class>ecommerce.product_category.control.InsertProductCategoryServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DownloadProductImageServlet</servlet-name>
+        <servlet-class>ecommerce.product.control.DownloadProductImageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -242,6 +246,10 @@
     <servlet-mapping>
         <servlet-name>InsertProductCategoryServlet</servlet-name>
         <url-pattern>/InsertProductCategoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DownloadProductImageServlet</servlet-name>
+        <url-pattern>/DownloadProductImageServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

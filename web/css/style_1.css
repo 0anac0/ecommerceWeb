@@ -25,6 +25,18 @@ a{
 
     
 }
+
+.sub-title {
+    
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: #093D36;
+    margin-top: 30px;
+    font-size: 30px;
+
+    
+}
 @media screen and (min-width: 480px){
 .cabecalho{
 
