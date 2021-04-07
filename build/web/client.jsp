@@ -110,7 +110,7 @@
                                 Product product = item.getProduct();
                             %>    
                                   <li  class="produto">
-                                    <img class="produto-img" src="img/orfeu.png" alt="café mineiro">
+                                    <img class="produto-img" src="<%=product.getImage()%>" alt="café mineiro">
                                     <p><%= product.getName()%></p>
                                     <p><%= item.getQuantity()%> unids.</p>
                                   <p>R$ <%= item.getPrice()%></p>

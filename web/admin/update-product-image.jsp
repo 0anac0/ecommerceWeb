@@ -53,25 +53,27 @@
         %>
         <h2 id="title">Editar imagem do produto </h2>
         <h3 class="sub-title">"<%=product.getName()%>"!</h3>
-            <div class="form-container">
+            <div class="form-container compras">
             
-                <form action="UploadProductImageServlet" method="post" enctype="multipart/form-data">
+                <form id="containerLogin" action="UploadProductImageServlet" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<%=product.getId()%>">
 
-                    <div>Foto atual:</div>
+                    <h3>Foto atual:</h3>
 
                     <%
                     if (product.getImage() ==null || product.getImage().trim().length() == 0) {
                     %>
                     <div>Este produto não possui imagem ainda.</div>
+                    
                     <%  } else { %>
                     <div><a href="DownloadProductImageServlet?id=<%=product.getId()%>">Baixar imagem do produto</a></div>
                     <%
                     }
                     %>
-                    <div>Nova foto:</div>
+                    </br>
+                    <h3>Nova foto:</h3>
                     <div><input type="file" name="image"></div>
-                    <input type="submit" value="Atualizar foto">
+                    <button class="bt-form" type="submit">Atualizar</button>               
                 </form>    
             </div>
     </body>
